@@ -1,0 +1,110 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.paquetes h2 {
+    color: v.$blanco;
+    margin: 3rem 1rem;
+}
+
+.grid-paquetes {
+    @include m.grid(1, 1rem);
+
+    @include m.tablet {
+        @include m.grid(3, 1rem);
+    }
+}
+
+.paquete {
+    @include m.bento(v.$f-secundario);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .4rem;
+    text-align: center;
+    padding: 2rem;
+
+    &-titulo {
+        font-weight: 600;
+    }
+
+    &-precio {
+        text-align: center;
+        margin: 1rem;
+    }
+
+    .precio {
+        color: v.$primario;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-right: 1rem;
+    }
+
+    .lista {
+        list-style: none;
+        text-align: center;
+        line-height: 1.6;
+
+        color: v.$grisClaro;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .lista li {
+        margin-bottom: 1.6rem;
+    }
+
+    &-link {
+        color: v.$primario;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: transform 0.3s ease;
+    }
+
+    &-link:hover {
+        cursor: pointer;
+        transform: translateX(1rem);
+    }
+
+}
+.icono_paq{
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem auto;
+}
+.paq1{
+    background-image: url('/img/iconos/icon1DM.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.paq2{
+    background-image: url('/img/iconos/icon2DM.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.paq3{
+    background-image: url('/img/iconos/icon3DM.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ribbon {
+    font-size: 1.2rem;
+    position: absolute;
+    width: 120px;
+    background-color: v.$primario;
+    color: v.$negro;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    top: 20px;
+    right: -30px;
+    transform: rotate(45deg);
+    padding: 5px 0;
+}

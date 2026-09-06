@@ -20,22 +20,41 @@
 # production
 /build
 
+# vercel
+.vercel
+.vercel/output/*
+
 # misc
 .DS_Store
-*.pem
+
+# env files (can opt-in for committing .env.example if needed)
+.env*
+!.env.example
+*.env.local
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
+*.log
+logs/
+*.pid
+*.pid.lock
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# editors / IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+
+# archives / temp
+*.pem
+tmp/
+.cache/

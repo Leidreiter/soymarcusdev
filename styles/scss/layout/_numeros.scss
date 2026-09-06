@@ -1,0 +1,46 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.numeros{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+    background: none;
+    
+    @include m.tablet{
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    span{
+            color: v.$primario;
+            font-weight: bold;
+        }
+    
+    .numero{
+        color: v.$blanco;
+        text-align: center;
+        background: none;
+
+        span{
+            font-size: 3rem;
+            color: v.$primario;
+        }
+        
+        @include m.tablet{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            p{
+                text-align: left;
+            }
+            span{
+                text-align: right;
+            }
+        }
+    }
+}

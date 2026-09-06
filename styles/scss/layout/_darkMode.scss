@@ -1,0 +1,521 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+/* From Uiverse.io by JustCode14 */ 
+/* Theme Switch */
+/* The switch - the box around the slider */
+.switchs{
+  z-index: 10000;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2rem;
+  
+  
+  @include m.tablet{
+    gap: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 1rem;
+  }
+  @include m.xl{
+    margin-top: 2rem;
+  }
+}
+/* Switch Dark Mode - From Uiverse.io by Type-Delta (happy-mule-45) */
+/* Tags: animation, minimalist, theme-switch, light&dark, toggle switch */
+.switch-dark {
+  color: #bbb;
+  width: 3em;
+  aspect-ratio: 1;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.333rem; /* 3em = 40px en móvil */
+
+  @include m.tablet {
+    font-size: 1rem; /* 3em = 30px en tablet */
+  }
+}
+
+/* Hide default HTML checkbox (mantiene el área clicable) */
+.switch-dark input {
+  opacity: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+}
+
+.switch-dark svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transition: transform 0.4s ease;
+  transform: rotate(40deg);
+}
+
+.switch-dark :global(.moonShape) {
+  transform-origin: center center;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.switch-dark :global(.sunShape) {
+  transform-origin: center center;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  opacity: 0;
+  transform: scale(0.35);
+}
+
+.switch-dark :global(.sunRay) {
+  transform-origin: 12px 12px;
+  opacity: 0;
+}
+
+.switch-dark :global(.sunRay2) {
+  animation-delay: 0.05s !important;
+}
+.switch-dark :global(.sunRay3) {
+  animation-delay: 0.1s !important;
+}
+.switch-dark :global(.sunRay4) {
+  animation-delay: 0.15s !important;
+}
+.switch-dark :global(.sunRay5) {
+  animation-delay: 0.2s !important;
+}
+.switch-dark :global(.sunRay6) {
+  animation-delay: 0.25s !important;
+}
+.switch-dark :global(.sunRay7) {
+  animation-delay: 0.29s !important;
+}
+.switch-dark :global(.sunRay8) {
+  animation-delay: 0.33s !important;
+}
+
+.switch-dark input:checked + svg {
+  transform: rotate(90deg);
+}
+.switch-dark input:checked + svg :global(.moonShape) {
+  opacity: 0;
+  transform: scale(1.12);
+}
+.switch-dark input:checked + svg :global(.sunShape) {
+  opacity: 1;
+  transform: scale(1);
+}
+.switch-dark input:checked + svg :global(.sunRay) {
+  animation: rayIn8241 0.4s ease 0s 1 forwards;
+}
+
+:global {
+  @keyframes rayIn8241 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+/* ============================================
+   ESTILOS PARA MODO LIGHT
+   ============================================
+   Cuando el body tiene la clase .light-mode,
+   se aplican estos estilos para cambiar de
+   modo dark a modo light.
+   ============================================ */
+
+/* Cambio de fondo del body - de dark (#191923) a light (#f5f5f5) */
+
+body:global(.light-mode) {
+  background-color: #ECEAF6;
+  color: #333;
+}
+
+/* Cambio de color de texto en h2 - de blanco a gradiente oscuro */
+body:global(.light-mode) h2 {
+  color: #333;
+}
+body:global(.light-mode) h3 {
+    color: #333;
+  }
+
+/* Cambio color porcentaje idiomas */
+body:global(.light-mode) .idioma .percentage {
+  color: #333;
+}
+body:global(.light-mode) .progress-rect {
+  stroke: v.$primario-hover;
+}
+/* Cambio color habilidades y dot testimoniales*/
+body:global(.light-mode) .fill,
+body:global(.light-mode) .dot{
+  background: v.$primario-hover;
+}
+/* Cambio color conocimientos, link tienda, yo(hero), btn hero, dot testimoniales, dots timeline, menu*/
+body:global(.light-mode) .skills-list li::before,
+body:global(.light-mode) .publi-link:hover,
+body:global(.light-mode) .texto-color,
+body:global(.light-mode) .servicio-link,
+body:global(.light-mode) .card-info a,
+body:global(.light-mode) .paquete-link,
+body:global(.light-mode) .timeline-item::before,
+body:global(.light-mode) .menu-items a:hover
+{
+  color: v.$primario-hover;
+}
+
+/* Cambio color btn hero, icono formulario, iconos formulario, btn contacto*/
+body:global(.light-mode) .hero-boton a,
+body:global(.light-mode) .icon-form,
+body:global(.light-mode) .boton button
+{
+  background-color: v.$primario-hover;
+}
+
+/* Cambio color ribbon paquetes */
+body:global(.light-mode) .ribbon{
+  background-color: v.$primario-hover;
+  color: v.$blanco;
+}
+
+body:global(.light-mode) .paq1{
+    background-image: url('/img/iconos/icon1LM.svg');
+}
+body:global(.light-mode) .paq2{
+    background-image: url('/img/iconos/icon2LM.svg');
+}
+body:global(.light-mode) .paq3{
+    background-image: url('/img/iconos/icon3LM.svg');
+}
+
+
+
+/* Cambio de fondo en contenedores de información - de dark (#20202a) a light (#ffffff) */
+body:global(.light-mode) .informacion,
+body:global(.light-mode) .habilidades,
+body:global(.light-mode) .conocimientos,
+body:global(.light-mode) .curriculum,
+body:global(.light-mode) .sidebar {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+body:global(.light-mode) .idioma {
+  background-color: #ffffff;
+}
+
+/* Cambio de color de texto en información - de blanco a oscuro */
+body:global(.light-mode) .informacion .info,
+body:global(.light-mode) .idiomas .idioma {
+  color: #333;
+}
+
+/* Cambio de color de valores secundarios - de gris claro (#aaa) a gris oscuro (#666) */
+body:global(.light-mode) .row .value,
+body:global(.light-mode) .mis-datos {
+  color: #666;
+}
+
+/* Cambio de color de nombre en header - de blanco a oscuro */
+body:global(.light-mode) .mis-datos .nombre {
+  color: #333;
+}
+
+/* Cambio de fondo del círculo de idiomas - de dark (#1a1a22) a light (#f0f0f0) */
+body:global(.light-mode) .bitmoji {
+  background-color: #f0f0f0;
+}
+
+
+
+body:global(.light-mode) .hamburger-menu{
+    color: #333;
+}
+
+/* Cambio de fondo de la barra de habilidades - de dark (#222) a light (#e0e0e0) */
+body:global(.light-mode) .bar {
+  background: #e0e0e0;
+}
+
+/* Cambio de color de texto en habilidades - de blanco a oscuro */
+body:global(.light-mode) .habilidades,
+body:global(.light-mode) .conocimientos {
+  color: #333;
+}
+
+/* Cambio de color de enlace de descarga - de gris claro a oscuro */
+body:global(.light-mode) .curriculum .link-descarga {
+  color: #666;
+}
+
+body:global(.light-mode) .curriculum .link-descarga:hover {
+  color: #333;
+}
+
+/* Cambio de fondo del header/perfil - de dark a light */
+body:global(.light-mode) .perfil {
+  /* background-color: rgba(255, 255, 255, 0.95); */
+  background-color: rgba(255, 166, 0, 0);
+  backdrop-filter: blur(.6rem);
+  border: 1px solid darkgrey;
+  color: #333;
+}
+
+/* Cambio de color de texto en servicios - de blanco a oscuro */
+body:global(.light-mode) .servicios h2,
+body:global(.light-mode) .servicio p {
+  color: #333;
+}
+
+/* Cambio de fondo de tarjetas de servicios - de dark (#20202a) a light (#ffffff) */
+body:global(.light-mode) .servicio {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+/* Cambio de color de texto en paquetes - de blanco a oscuro */
+body:global(.light-mode) .paquetes h2 {
+  color: #333;
+}
+
+/* Cambio de fondo de tarjetas de paquetes - de dark (#20202a) a light (#ffffff) */
+body:global(.light-mode) .paquete {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+/* Cambio de color de texto en lista de paquetes - de gris claro a oscuro */
+body:global(.light-mode) .paquete .lista {
+  color: #666;
+}
+
+/* Cambio de color de texto en testimonios - de blanco a oscuro */
+body:global(.light-mode) .testimonials,
+body:global(.light-mode) .testimonials h2 {
+  color: #333;
+}
+
+/* Cambio de fondo de tarjetas de testimonios - de dark (#20202a) a light (#ffffff) */
+body:global(.light-mode) .testimonial-card {
+  border: 1px solid #e0e0e0;
+}
+body:global(.light-mode) .testimonial-glow {
+  --testimonial-bg: #ffffff;
+}
+
+/* Cambio de color de texto en testimonios - de gris claro a oscuro */
+body:global(.light-mode) .testimonial-text,
+body:global(.light-mode) .testimonial-info p {
+  color: #666;
+}
+
+/* Cambio de fondo de estrellas - de dark (#1a1a22) a light (#f0f0f0) */
+body:global(.light-mode) .stars {
+  background-color: #f0f0f0;
+}
+
+/* Cambio de fondo de botones de navegación - de dark (#333) a light (#e0e0e0) */
+body:global(.light-mode) .arrow {
+  background: #e0e0e0;
+  color: #333;
+}
+
+body:global(.light-mode) .arrow:hover {
+  background: #d0d0d0;
+}
+
+/* Cambio de color de dot activo - de dark (#333) a light (#999) */
+body:global(.light-mode) .dot.active {
+  background: #999;
+}
+
+/* Cambio de color de texto en trabajos - de blanco a oscuro */
+body:global(.light-mode) .trabajos h2 {
+  color: #333;
+}
+
+/* Cambio de fondo de info de tarjetas - de dark (#242430) a light (#ffffff) */
+body:global(.light-mode) .card-info {
+  background: #ffffff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+/* En móvil, cambio de fondo de info de tarjetas - de dark (#222) a light (#f5f5f5) */
+@media (max-width: 768px) {
+  body:global(.light-mode) .card-info {
+    background: #f5f5f5;
+  }
+}
+
+/* Cambio de color de texto en contacto - de blanco a oscuro */
+body:global(.light-mode) .contacto h2 {
+  color: #333;
+}
+
+/* Cambio de fondo del formulario - de dark (#20202a) a light (#ffffff) */
+body:global(.light-mode) .contacto-form {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+/* Cambio de fondo de campos del formulario - de dark (#1a1a22) a light (#f5f5f5) */
+body:global(.light-mode) .campo {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+/* Cambio de fondo de redes sociales - de dark (#242430) a light (#ffffff) */
+body:global(.light-mode) .redes {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+/* Cambio de color de iconos de redes - de gris claro a oscuro */
+body:global(.light-mode) .redes a {
+  color: #666;
+}
+
+body:global(.light-mode) .redes a:hover {
+  color: #333;
+}
+
+/* Cambio de fondo del footer - de dark (#242430) a light (#ffffff) */
+body:global(.light-mode) .footer {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #666;
+}
+
+/* Cambio de color de enlaces del footer - de gris claro a oscuro */
+body:global(.light-mode) .footer a {
+  color: #666;
+}
+
+body:global(.light-mode) .footer a:hover {
+  color: #333;
+}
+
+/* Cambio de overlay del hero - más sutil en light mode */
+body:global(.light-mode) .hero .overlay {
+  background-image: linear-gradient(
+  90deg,
+  rgba(255, 255, 255, 0.15) 15%,
+  rgba(255, 255, 255, 0.1) 50%,
+  rgba(250, 250, 250, 0.08) 100%
+);
+}
+
+/* Hero title y typewriter se mantienen blancos en light mode */
+body:global(.light-mode) .hero-titulo h1,
+body:global(.light-mode) .typewriter {
+  color: v.$blanco;
+}
+
+/* Cambio de fondo de números - de dark (#20202a) a light (#ffffff) */
+body:global(.light-mode) .numero {
+  background:none;
+  border: 1px solid #e0e0e0;
+  color: #333;
+}
+
+/* Cambio de color de texto en números - de blanco a oscuro */
+body:global(.light-mode) .numero p {
+  color: #666;
+}
+
+/* Cambio de color de texto en números - de blanco a oscuro */
+body:global(.light-mode) .numero span {
+  color: v.$primario-hover;
+}
+
+/* Cambio de fondo de timeline - de dark (#20202a) a light (#ffffff) */
+body:global(.light-mode) .timeline-column {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+/* Cambio de color de texto en timeline - de blanco a oscuro */
+body:global(.light-mode) .timeline-column h2,
+body:global(.light-mode) .timeline-item h3 {
+  color: #333;
+}
+
+/* Cambio de color de borde izquierdo - de dark (#1a1a22) a light (#e0e0e0) */
+body:global(.light-mode) .timeline-item {
+  border-left-color: #e0e0e0;
+}
+
+/* Cambio de fondo de fecha - de dark (#1a1a22) a light (#f0f0f0) */
+body:global(.light-mode) .timeline-item .date {
+  background: #f0f0f0;
+  color: #666;
+}
+
+/* Cambio de color de texto en timeline - de gris claro a oscuro */
+body:global(.light-mode) .timeline-item p {
+  color: #666;
+}
+
+/* Cambio de fondo de tecnologías - mantener transparente pero ajustar si es necesario */
+body:global(.light-mode) .tecnologias {
+  background-color: transparent;
+}
+
+/* Cambio de fondo de tienda */
+body:global(.light-mode) .publi {
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+
+body:global(.light-mode) .publi-overlay{
+  background: rgba(255, 255, 255, 0.835);
+}
+
+body:global(.light-mode) .publi-link{
+  color: #333;
+}
+body:global(.light-mode) .publi-sabias p{
+  color: #333;
+}
+
+body:global(.light-mode) .publilogo1{
+  background-image: url('/img/logo-hms-dm.svg');
+}
+
+body:global(.light-mode) .card{
+  background:#ffffff;
+}
+body:global(.light-mode) .iconBtn{
+  background-color: v.$blanco;
+  color: v.$negro;
+}
+body:global(.light-mode) .iconos-foto i{
+  background-color: v.$primario-hover;
+}
+body:global(.light-mode) .switch-dark{
+  color: #444;
+}
+body:global(.light-mode) .hero{
+  background-image: url('/img/banner.png');
+}
+

@@ -1,0 +1,319 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.hero {
+  background: url('/img/banner.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 26rem;
+  position: relative;
+  border-radius: 2rem;
+  margin-top: 1rem;
+
+  @include m.tablet {
+    height: 42rem;
+    margin-top: 0px;
+  }
+
+  @include m.xl {
+    height: 48rem;
+    margin-top: 0px;
+  }
+
+  .hero-shards {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+
+  .overlay {
+    position: absolute;
+    background-image: linear-gradient(90deg, rgba(13, 12, 26, .5) 25%, rgba(13, 12, 26, .25) 60%, rgba(13, 12, 26, .3) 100%);
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    @include m.tablet {
+      text-align: left;
+      flex-direction: row;
+    }
+
+    border-radius: 2rem;
+  }
+
+  .hero-titulo h1 {
+    color: v.$blanco;
+    font-weight: bold;
+    margin: 0;
+    text-wrap: balance;
+    font-size: clamp(2rem, 3.6vw, 3.6rem);
+
+    span {
+      font-size: inherit;
+    }
+  }
+
+  .typewriter {
+    color: v.$blanco;
+    display: inline-block;
+    border-right: 1px solid v.$grisClaro;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 2rem 0;
+
+    p {
+      margin: 0;
+    }
+
+    span {
+      font-size: 1.6rem;
+
+      @include m.tablet {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .texto-color {
+    color: v.$primario;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .hero-copy {
+    width: 100%;
+    padding: 2rem;
+
+    @include m.tablet {
+      width: 80%;
+      padding: 4rem;
+
+    }
+  }
+
+  .hero-boton-star {
+    --star-padding: 1.4rem 1rem;
+    --star-w: 100%;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+
+    @include m.tablet {
+      --star-w: auto;
+      width: auto;
+      --star-padding: 1rem 1.8rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
+
+  .hero-imagen {
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background-color: rgba(255, 166, 0, 0);
+    backdrop-filter: blur(.6rem);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 2.4rem;
+    margin: 1rem;
+
+    
+    @include m.tablet {
+      position: relative;
+      width: 60%;
+      height: 100%;
+      margin-right: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+      background-color: none;
+      backdrop-filter: none;
+      border: none;
+    }
+  }
+
+
+
+  .hero-imagen img {
+    @include m.tablet{
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      max-width: none;
+      display: block;
+      overflow: hidden;
+    }
+  }
+  .foto{
+    display: none;
+    @include m.tablet{
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      max-width: none;
+      display: block;
+      overflow: hidden;
+    }
+  }
+
+  .hero-podcast {
+    display: none;
+    @include m.tablet {
+      display: block;
+      width: 80%;
+      max-width: 28rem;
+      height: auto;
+      object-fit: contain;
+      border-radius: 1.6rem;
+      margin-top: 1rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+// iconos hero
+
+.contenedor-foto {
+  position: relative;
+}
+
+.contenedor-foto img {
+  width: 100%;
+  display: block;
+}
+
+/* Cursor Reveal Effect */
+.cursor-reveal {
+  .reveal-base {
+    width: 100%;
+    display: block;
+  }
+
+  .reveal-target {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: radial-gradient(circle 0px at 50% 50%, black 100%, transparent 100%);
+    mask-image: radial-gradient(circle 0px at 50% 50%, black 100%, transparent 100%);
+    pointer-events: none;
+  }
+
+  &:hover .reveal-target {
+    -webkit-mask-image: radial-gradient(circle 30px at var(--mx, 50%) var(--my, 50%), black 60%, transparent 100%);
+    mask-image: radial-gradient(circle 30px at var(--mx, 50%) var(--my, 50%), black 60%, transparent 100%);
+  }
+}
+
+/* contenedor de iconos */
+.iconos-foto {
+  position: absolute;
+  inset: 0; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  pointer-events: none;
+}
+
+
+.iconos-foto i {
+  font-size: 2.4rem;
+  width: 5rem;
+  height: 5rem;
+  background: v.$primario;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$blanco;
+  pointer-events: auto;
+
+    @include m.tablet {
+      font-size: 2rem;
+      width: 4rem;
+      height: 4rem;
+  }
+}
+
+/* alternar lados */
+.iconos-foto i:nth-child(1){
+  margin-left: 4rem;
+}
+.iconos-foto i:nth-child(2){
+  margin-left: 2rem;
+}
+.iconos-foto i:nth-child(1),
+.iconos-foto i:nth-child(3) {
+  align-self: flex-start;
+}
+
+.iconos-foto i:nth-child(2),
+.iconos-foto i:nth-child(4) {
+  align-self: flex-end;
+  margin-right: 12px;
+}
+
+.iconos-foto i:nth-child(4) {
+  align-self: flex-end;
+  margin-right: 12px;
+  animation-delay: 0.5s;
+}
+
+// Menu móvil 
+
+.icon-home{
+  background-image: url('/img/home.svg');
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+  display: inline-block;
+  background-size: contain;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  border: 1rem solid #2a2a2a;
+  @include m.tablet{
+   display: none;
+  }
+}
+.icon-ws{
+  background-image: url('/img/whatsapp.svg');
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+  display: inline-block;
+  background-size: contain;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  border: 1rem solid #2a2a2a;
+  @include m.tablet{
+   display: none;
+  }
+}

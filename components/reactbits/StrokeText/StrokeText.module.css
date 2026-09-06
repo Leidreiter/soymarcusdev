@@ -1,0 +1,20 @@
+.strokeText {
+  display: block;
+  width: 100%;
+  line-height: 0;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.stroke,
+.fill {
+  user-select: none;
+}

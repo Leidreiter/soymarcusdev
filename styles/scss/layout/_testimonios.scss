@@ -1,0 +1,145 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.testimonials {
+    color: v.$blanco;
+}
+
+.testimonials h2 {
+    margin: 3rem 1rem;
+}
+
+.testimonial-container {
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial {
+    flex: 0 0 50%;
+    @include m.tablet{
+        padding: 0 20px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial {
+        flex: 0 0 100%;
+    }
+}
+
+.testimonial-card {
+    @include m.bento(v.$f-secundario);
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+}
+
+.testimonial-glow {
+    --testimonial-bg: #14121f;
+    height: 100%;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.testimonial-info {
+    text-align: left;
+}
+
+.testimonial-info h4 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.testimonial-info p {
+    margin: 0;
+    color: v.$grisClaro;
+}
+
+.testimonial-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-text {
+    margin: 20px 0;
+    color: v.$grisClaro;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.stars {
+    font-size: 1.2rem;
+    color: gold;
+    letter-spacing: 4px;
+    background-color: v.$f-terciario;
+    padding: .8rem;
+    border-radius: 5rem;
+    display: block;
+    width: fit-content;
+}
+
+/* Navegación */
+.testimonial-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: v.$primario;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #333;
+}
+
+.arrows {
+    display: flex;
+    gap: 10px;
+}
+
+.arrow {
+    font-size: 3rem;
+    line-height: 0;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow:hover {
+    background: #555;
+}

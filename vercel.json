@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/links.html", "destination": "/links" },
+    { "source": "/entrevistas.html", "destination": "/entrevistas" }
+  ]
+}

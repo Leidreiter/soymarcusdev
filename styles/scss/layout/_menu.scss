@@ -1,0 +1,80 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+.menu{
+  display: block;
+}
+.contenido-sidebar {
+  width: 100%;
+
+  @include m.tablet {
+    text-align: center;
+    position: fixed;
+  }
+}
+
+.hamburger-menu {
+  font-size: 3rem;
+  display: none;
+  padding: 0;
+  
+
+  @include m.tablet {
+    display: block;
+    background: none;
+    border: none;
+    color: v.$blanco;
+    cursor: pointer;
+    margin-bottom: 1.2rem;
+    align-self: center;
+  }
+
+}
+
+
+.menu-items {
+  opacity: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  @include m.tablet {
+    width: 100%;  
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity v.$speed ease;
+    text-align: left;
+  }
+
+}
+
+.main-content:global(.open) .menu-items {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-items li {
+  padding: 0.8rem 0;
+}
+
+.menu-items a {
+  color: v.$grisClaro;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+}
+
+.menu-items a:hover {
+  color: v.$primario;
+}
+.color{
+  color: v.$primario !important;
+}
+

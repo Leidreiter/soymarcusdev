@@ -1,0 +1,286 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/* contenedor */
+.contenedor_info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* información */
+
+.informacion {
+    @include m.bento(v.$f-secundario);
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        color: #fff;
+    }
+
+    .info div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .row .value {
+        color: #aaa;
+    }
+
+}
+
+/* Idiomas */
+
+.idiomas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: stretch;
+
+    .idioma {
+        @include m.bento(v.$f-secundario);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        color: #fff;
+
+        .progress-border {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .progress-rect {
+            stroke: #8B5CF6;
+        }
+
+        .percentage {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Habilidades */
+
+.habilidades {
+    @include m.bento(v.$f-secundario);
+}
+
+.habilidad {
+    margin-bottom: 20px;
+}
+
+.hab-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.value {
+    text-align: right;
+}
+
+.bar {
+    background: #222;
+    /* fondo barra */
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 5px;
+    position: relative;
+}
+
+.fill {
+    background: v.$primario;
+    /* color de progreso */
+    height: 100%;
+    border-radius: 3px;
+    width: 0;
+    /* arranca vacía */
+    animation: cargar 2s ease forwards;
+}
+
+/* Animación de carga */
+@keyframes cargar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--ancho);
+    }
+}
+
+/* Animación escalonada (opcional) */
+.habilidad:nth-child(1) .fill {
+    animation-delay: 0s;
+}
+
+.habilidad:nth-child(2) .fill {
+    animation-delay: 0.3s;
+}
+
+.habilidad:nth-child(3) .fill {
+    animation-delay: 0.6s;
+}
+
+.habilidad:nth-child(4) .fill {
+    animation-delay: 0.9s;
+}
+
+.habilidad:nth-child(5) .fill {
+    animation-delay: 1.2s;
+}
+
+
+
+/* Conocimientos */
+
+.conocimientos {
+    @include m.bento(v.$f-secundario);
+
+    .skills-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .skills-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .skills-list li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: v.$primario;
+    }
+}
+
+/* Curriculum */
+
+.curriculum {
+    @include m.bento(v.$f-secundario);
+
+    .link-descarga {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        color: #aaa;
+        display: block;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            color: v.$blanco;
+            transform: translateX(1rem);
+        }
+    }
+}
+
+
+.publi {
+    @include m.bento();
+
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 18rem;
+
+    .publi-logo {
+        width: 6rem;
+        height: 6rem;
+
+        @include m.tablet {
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+
+    &.publibg1 {
+        @include m.background(url('/img/bg-tienda.webp'));
+    }
+    &.publibg2 {
+        @include m.background(url('/img/bg-podcast.webp'));
+    }
+
+    .publilogo1 {
+        background-image: url('/img/logo-hms.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .publilogo2 {
+        background-image: url('/img/vidafreelance.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    // --- CAPA 3: overlay superior ---
+    .publi-overlay {
+        position: absolute;
+        inset: 0;
+        border-radius: 1rem;
+        padding: 2rem;
+
+        background: rgba(37, 37, 37, 0.896);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-wrap: wrap;
+        row-gap: 1rem;
+    }
+
+    .publi-sabias {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+
+        p {
+            text-align: center;
+            text-wrap: balance;
+            display: block;
+            color: v.$blanco;
+        }
+    }
+
+    .publi-link {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: v.$blanco;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            color: v.$primario;
+            transform: translateX(1rem);
+        }
+    }
+}

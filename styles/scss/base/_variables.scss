@@ -1,0 +1,37 @@
+$fuente_principal :  "Montserrat", sans-serif;
+
+/* Sobrescribe el comportamiento por defecto de Font Awesome */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-display: swap;
+}
+
+// Colores
+$negro: #000000;
+$blanco: #FFFFFF;
+// $primario: #3858E9;
+$primario: #8B5CF6;
+$primario-hover: #7C3AED;
+$acento: #22D3EE;
+$gradiente: linear-gradient(135deg, #8B5CF6, #22D3EE);
+$f-perfil: linear-gradient(159deg, rgba(36, 31, 64, .98) 0%, rgba(27, 25, 44, .98) 100%);
+$f-primario: #0B0A14;
+$f-secundario: #14121F;
+$f-terciario: #06060C;
+$grisClaro: #a9a4c4;
+
+// Media Queries
+$tel: 480px;
+$tablet: 768px;
+$desk: 1200px;
+$xl: 1400px;
+
+// Menu
+$open: 30rem;
+$closed: 8rem;
+$speed: 0.3s;
