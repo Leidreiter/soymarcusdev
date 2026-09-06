@@ -6,7 +6,7 @@ import type {
 } from "react";
 import styles from "./StarBorder.module.css";
 
-interface StarBorderProps<T extends ElementType> extends ComponentPropsWithoutRef<T> {
+type StarBorderProps<T extends ElementType> = ComponentPropsWithoutRef<T> & {
   as?: T;
   className?: string;
   children?: ReactNode;
@@ -17,7 +17,8 @@ interface StarBorderProps<T extends ElementType> extends ComponentPropsWithoutRe
   textColor?: string;
   borderColor?: string;
   borderRadius?: number;
-}
+  style?: CSSProperties;
+};
 
 const StarBorder = <T extends ElementType = "button">({
   as,
