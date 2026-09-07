@@ -215,11 +215,10 @@ export default function Sidebar() {
 
       <FadeContent delay={720} duration={700}>
         <section className={styles.posts}>
-          <h3 className={styles["posts-title"]}>{t.ultimosPost}</h3>
           <DepthCarousel
             items={POSTS}
-            cardWidth={260}
-            cardHeight={347}
+            cardWidth={240}
+            cardHeight={400}
             radius={16}
             tint="#05060a"
             depth={180}

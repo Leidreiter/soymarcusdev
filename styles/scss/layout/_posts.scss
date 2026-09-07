@@ -1,13 +1,5 @@
 /* Posts (galería TikTok) */
 
 .posts {
-    .posts-title {
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: bold;
-        letter-spacing: 0.08em;
-        color: #aaa;
-        font-size: 1.6rem;
-        margin: 0 0 1rem;
-    }
+    display: block;
 }
