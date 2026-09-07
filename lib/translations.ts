@@ -24,6 +24,9 @@ export const translations = {
     descargarCV: "Descargar CV",
     cvPath: "/docs/CV-ES-MartinLeidreiter.pdf",
 
+    // Posts
+    ultimosPost: "Últimos post",
+
     // Hero
     heroTitulo: "Creo soluciones digitales para hacer crecer tu proyecto",
     heroTypewriter: "<Yo>",
@@ -264,6 +267,9 @@ export const translations = {
     // Download CV
     descargarCV: "Download CV",
     cvPath: "/docs/CV-EN-MartinLeidreiter.pdf",
+
+    // Posts
+    ultimosPost: "Latest posts",
 
     // Hero
     heroTitulo: "Professional custom web design and development.",

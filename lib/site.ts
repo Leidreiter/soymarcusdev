@@ -23,6 +23,25 @@ export const REDES_FOOTER = [
   },
 ];
 
+const TIKTOK_BASE = "https://www.tiktok.com/@soymarcus.dev/video/";
+
+export const POSTS = [
+  { image: `/img/posts/11.png`, href: `${TIKTOK_BASE}7679082540916952328` },
+  { image: `/img/posts/12.png`, href: `${TIKTOK_BASE}7679169442604911890` },
+  { image: `/img/posts/13.png`, href: `${TIKTOK_BASE}7679497094545100050` },
+  { image: `/img/posts/14.png`, href: `${TIKTOK_BASE}7680226189524651282` },
+  { image: `/img/posts/15.png`, href: `${TIKTOK_BASE}7680299180673256712` },
+  { image: `/img/posts/16.png`, href: `${TIKTOK_BASE}7680373613580668178` },
+  { image: `/img/posts/17.png`, href: `${TIKTOK_BASE}7680599008313625864` },
+  { image: `/img/posts/18.png`, href: `${TIKTOK_BASE}7680673110177172743` },
+  { image: `/img/posts/19.png`, href: `${TIKTOK_BASE}7680740971465739528` },
+  { image: `/img/posts/20.png`, href: `${TIKTOK_BASE}7681045093733764359` },
+  { image: `/img/posts/21.png`, href: `${TIKTOK_BASE}7681344918345911559` },
+  { image: `/img/posts/22.png`, href: `${TIKTOK_BASE}7681489877107477778` },
+  { image: `/img/posts/23.png`, href: `${TIKTOK_BASE}7681717345961790738` },
+  { image: `/img/posts/24.png`, href: `${TIKTOK_BASE}7681797282206895368` },
+].map((post) => ({ ...post, alt: "@soymarcus.dev - Post en TikTok" }));
+
 export const HABILIDADES_TECNICAS = [
   "fa-brands fa-html5",
   "fa-brands fa-css3-alt",
