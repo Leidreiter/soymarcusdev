@@ -1,11 +1,6 @@
-@use '../base/variables' as v;
-@use '../base/mixins' as m;
-
 /* Posts (galería TikTok) */
 
 .posts {
-    @include m.bento(v.$f-secundario);
-
     .posts-title {
         text-transform: uppercase;
         text-align: center;

@@ -235,7 +235,7 @@ export default function Sidebar() {
             autoplay
             autoplayDelay={3800}
             loop
-            showControls
+            showControls={false}
             showIndicators
           />
         </section>
