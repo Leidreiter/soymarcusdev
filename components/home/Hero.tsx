@@ -5,7 +5,6 @@ import { useLanguage } from "@/app/providers/language";
 import { useTheme } from "@/app/providers/theme";
 import { useTypewriter } from "@/app/hooks/useTypewriter";
 import { WHATSAPP_HERO_URL } from "@/lib/site";
-import ShinyText from "@/components/reactbits/ShinyText/ShinyText";
 import FadeContent from "@/components/reactbits/FadeContent/FadeContent";
 import Magnet from "@/components/reactbits/Magnet/Magnet";
 import StarBorder from "@/components/reactbits/StarBorder/StarBorder";
@@ -50,15 +49,7 @@ export default function Hero() {
 
           <div className={styles.typewriter}>
             <p>
-              <ShinyText
-                text="< Yo > "
-                className={styles["texto-color"]}
-                speed={1.5}
-                color="#8b5cf6"
-                shineColor="#22d3ee"
-                spread={150}
-                yoyo
-              />
+<span className={styles["texto-color"]}>&lt; Yo &gt;</span>
               <span className={styles.type}>{typed}</span>
             </p>
           </div>
