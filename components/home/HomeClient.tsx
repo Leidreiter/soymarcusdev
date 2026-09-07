@@ -14,6 +14,7 @@ import Menu from "@/components/home/Menu";
 import Noise from "@/components/reactbits/Noise/Noise";
 import SiteGlowCursor from "@/components/reactbits/GlowCursor/SiteGlowCursor";
 import ClickSpark from "@/components/reactbits/ClickSpark/ClickSpark";
+import FloatingCta from "@/components/FloatingCta/FloatingCta";
 
 export default function HomeClient() {
   const mainRef = useRef<HTMLElement>(null);
@@ -73,6 +74,7 @@ export default function HomeClient() {
       <SiteGlowCursor />
       <ClickSpark fixed sparkColor="#22D3EE" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400} />
       <Noise patternAlpha={10} />
+      <FloatingCta />
     </div>
   );
 }

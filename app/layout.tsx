@@ -3,7 +3,6 @@ import { Montserrat, Inter, Unbounded, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./providers/language";
 import { ThemeProvider } from "./providers/theme";
-import FloatingCta from "@/components/FloatingCta/FloatingCta";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -119,7 +118,6 @@ export default function RootLayout({
         <LanguageProvider>
           <ThemeProvider>
             {children}
-            <FloatingCta />
           </ThemeProvider>
         </LanguageProvider>
       </body>
