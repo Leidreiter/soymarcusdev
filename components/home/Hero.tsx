@@ -12,8 +12,8 @@ import StarBorder from "@/components/reactbits/StarBorder/StarBorder";
 import AeroShards from "@/components/reactbits/AeroShards/AeroShards";
 
 const TITLE_LINES: Record<string, string[]> = {
-  es: ["Diseño y desarrollo web", "Profesional a medida"],
-  en: ["Professional custom web", "Design and development"],
+  es: ["Creo soluciones digitales", "para hacer crecer tu proyecto"],
+  en: ["Create digital solutions", "to grow your project"],
 };
 
 export default function Hero() {

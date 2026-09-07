@@ -25,7 +25,7 @@ export const translations = {
     cvPath: "/docs/CV-ES-MartinLeidreiter.pdf",
 
     // Hero
-    heroTitulo: "Diseño y Desarrollo web profesional a medida.",
+    heroTitulo: "Creo soluciones digitales para hacer crecer tu proyecto",
     heroTypewriter: "<Yo>",
     heroBoton: "Descubrelo ahora",
     heroTypewriterTexts: [
