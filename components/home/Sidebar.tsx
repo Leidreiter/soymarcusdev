@@ -96,7 +96,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <header className={`${styles.header} ${styles.perfil}`}>
+      <header id="home" className={`${styles.header} ${styles.perfil}`}>
         <FadeContent delay={0} duration={700}>
           <div className={styles.logo}>
             <div className={styles.pulseOnline}></div>

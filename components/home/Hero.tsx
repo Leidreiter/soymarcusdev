@@ -22,7 +22,7 @@ export default function Hero() {
   const titleLines = TITLE_LINES[lang] ?? TITLE_LINES.es;
 
   return (
-    <div className={styles.hero} id="home">
+    <div className={styles.hero} id="hero-section">
       <AeroShards
         className={styles["hero-shards"]}
         backgroundColor="#0B0A14"
