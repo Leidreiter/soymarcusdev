@@ -4,11 +4,11 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useLayoutEffect,
   useMemo,
   useState,
 } from "react";
+import { usePathname } from "next/navigation";
 
 type ThemeContextValue = {
   isDark: boolean;
@@ -43,17 +43,18 @@ function resolveInitialTheme(): boolean {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [isDark, setIsDark] = useState<boolean>(true);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    if (typeof window === "undefined") return true;
+    return resolveInitialTheme();
+  });
 
   useLayoutEffect(() => {
-    const initial = resolveInitialTheme();
-    setIsDark(initial);
-    applyBodyClass(initial);
-  }, []);
-
-  useEffect(() => {
-    applyBodyClass(isDark);
-  }, [isDark]);
+    // El modo claro solo aplica en la home; el resto de las páginas siempre en dark.
+    applyBodyClass(isHome ? isDark : true);
+  }, [isHome, isDark]);
 
   const toggleTheme = useCallback(() => {
     setIsDark((prev) => {

@@ -110,7 +110,7 @@ export default function RootLayout({
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){function apply(){try{var isDark;var s=localStorage.getItem('theme');var h=new Date().getHours();if(s){isDark=s==='dark';}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){isDark=true;}else{isDark=h>=20||h<7;}var b=document.body;if(b){if(!isDark)b.classList.add('light-mode');}else{requestAnimationFrame(apply);}}catch(e){}}apply();})();`,
+            __html: `(function(){function apply(){try{var isDark;var s=localStorage.getItem('theme');var h=new Date().getHours();if(s){isDark=s==='dark';}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){isDark=true;}else{isDark=h>=20||h<7;}var b=document.body;if(b){if(!isDark&&location.pathname==='/')b.classList.add('light-mode');else{b.classList.remove('light-mode');}}else{requestAnimationFrame(apply);}}catch(e){}}apply();})();`,
           }}
         />
       </head>
