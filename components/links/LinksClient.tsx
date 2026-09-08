@@ -37,6 +37,16 @@ const VIDEOS = [
   { src: "https://www.youtube.com/embed/KXG-Ua4vqb4", title: "YouTube video player" },
 ];
 
+const EVENTOS = [
+  {
+    name: "Nerdearla",
+    url: "Tickets — la conferencia de tecnología más grande de LATAM",
+    href: "https://tickets.nerdearla.com?invited_by=f2wcdr4u",
+    favicon: "https://www.google.com/s2/favicons?domain=nerdearla.com&sz=64",
+    alt: "Nerdearla favicon",
+  },
+];
+
 const RECURSOS = [
   {
     name: "Project Stitch",
@@ -352,6 +362,42 @@ export default function LinksClient() {
               >
                 <i className={social.icon}></i>
                 <span className="tooltip">{social.label}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="section animate-in" aria-label="Eventos">
+          <h2 className="section-title">Eventos</h2>
+          <div className="links-grid">
+            {EVENTOS.map((evento) => (
+              <a
+                key={evento.name}
+                href={evento.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="resource-card"
+                aria-label={evento.name}
+                onClick={ripple}
+              >
+                <img
+                  src={evento.favicon}
+                  alt={evento.alt}
+                  className="resource-favicon"
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+                <div className="resource-info">
+                  <span className="resource-name">{evento.name}</span>
+                  <span className="resource-url">{evento.url}</span>
+                </div>
+                <span className="link-arrow">
+                  <i className="fa-solid fa-arrow-right"></i>
+                </span>
               </a>
             ))}
           </div>
