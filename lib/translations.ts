@@ -178,6 +178,9 @@ export const translations = {
     portfolio19Titulo: "Alac Ohh",
     portfolio19Desc:
       "Plataforma web institucional con información clara y diseño profesional.",
+    portfolio20Titulo: "Code Injection",
+    portfolio20Desc:
+      "Web de emprendimiento tecnológico con estética moderna y contenido claro.",
     verTrabajo: "Ver trabajo",
 
     // Problemas / Soluciones
@@ -433,6 +436,9 @@ export const translations = {
     portfolio19Titulo: "Alac Ohh",
     portfolio19Desc:
       "Institutional web platform with clear information and professional design.",
+    portfolio20Titulo: "Code Injection",
+    portfolio20Desc:
+      "Tech venture website with modern aesthetics and clear content.",
     verTrabajo: "View work",
 
     // Problemas / Soluciones

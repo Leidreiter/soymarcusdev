@@ -44,16 +44,12 @@ export default function Contacto() {
     const fullName = (
       form.elements.namedItem("fullName") as HTMLInputElement
     ).value;
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
     const consulta = (
       form.elements.namedItem("consulta") as HTMLTextAreaElement
     ).value;
 
     let messageText = `Hola, soy ${fullName}.\n`;
     messageText += `Llegué a tu web por ${origen}.\n`;
-    if (email) {
-      messageText += `Mi email es ${email}.\n`;
-    }
     if (consulta) {
       messageText += `Quería consultar ${consulta}.\n`;
     }
@@ -104,16 +100,6 @@ export default function Contacto() {
               <i className="fa-solid fa-user"></i>
             </div>
             <input type="text" id="fullName" className={styles.campo} name="fullName" required placeholder={t.formNombre} />
-          </div>
-
-          <div className={styles.field}>
-            <label htmlFor="email" className="sr-only">
-              {t.formEmail}
-            </label>
-            <div className={styles["icon-form"]}>
-              <i className="fa-solid fa-at"></i>
-            </div>
-            <input type="email" id="email" className={styles.campo} name="email" placeholder={t.formEmail} />
           </div>
 
           <div className={styles.field}>

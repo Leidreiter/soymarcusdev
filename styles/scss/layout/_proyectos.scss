@@ -4,14 +4,15 @@
 .proyectos h2 {
     color: v.$blanco;
     margin: 3rem 1rem;
+    text-align: center;
   }
 
 .proyecto{
-    --logoloop-logoHeight: 2.4rem;
+    --logoloop-logoHeight: 3rem;
     margin: 4rem 0;
 
     @include m.tablet{
-        --logoloop-logoHeight: 5rem;
+        --logoloop-logoHeight: 5.8rem;
         margin: 6rem 0;
     }
 
@@ -19,6 +20,7 @@
         position: relative;
         display: inline-flex;
         align-items: center;
+        padding: 1.5rem 0;
 
         @include m.tablet {
             &::before {
@@ -70,14 +72,22 @@
         }
     }
 
+    span {
+        display: inline-flex;
+        align-items: center;
+        padding: 1.5rem 0;
+    }
+
     a img,
     span img {
         object-fit: contain;
         filter: grayscale(100%);
         transition: filter 0.5s ease;
-        &:hover{
-            filter: grayscale(0%);
-        }
+    }
+
+    a:hover img,
+    span:hover img {
+        filter: grayscale(0%) drop-shadow(0 0 3px v.$acento) drop-shadow(0 0 6px v.$acento);
     }
 
 }

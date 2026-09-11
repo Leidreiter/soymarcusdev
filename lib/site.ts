@@ -322,6 +322,14 @@ export const PORTFOLIO = [
     descKey: "portfolio19Desc" as const,
     alt: "Alac Ohh",
   },
+  {
+    png: "/img/portfolio/code-injection.png",
+    webp: "/img/portfolio/code-injection.webp",
+    url: "https://www.codeinjection.site/",
+    tituloKey: "portfolio20Titulo" as const,
+    descKey: "portfolio20Desc" as const,
+    alt: "Code Injection",
+  },
 ];
 
 export const DIAGNOSTICO = [

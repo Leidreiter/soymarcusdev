@@ -28,7 +28,7 @@ export function Proyectos() {
           <LogoLoop
             speed={40}
             direction="left"
-            gap={32}
+            gap={52}
             pauseOnHover
             logos={PROYECTOS_LOGOS}
             ariaLabel="Logos de proyectos"
