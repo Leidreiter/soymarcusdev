@@ -136,9 +136,9 @@ export const translations = {
     portfolio5Titulo: "Hola Mundo Store",
     portfolio5Desc:
       "Web catálogo simil ecommerce para venta de productos vía WhatsApp.",
-    portfolio6Titulo: "Tecnocell Company",
+    portfolio6Titulo: "Proyecto Patitas",
     portfolio6Desc:
-      "Catálogo web moderno y usabilidad fluida para toma de pedidos directa.",
+      "Plataforma social de adopción y tenencia responsable de perritos que conecta rescatistas con adoptantes.",
     portfolio7Titulo: "Constanza Estevan",
     portfolio7Desc:
       "Sitio personal con estética cuidada y presentación profesional.",
@@ -166,6 +166,18 @@ export const translations = {
     portfolio15Titulo: "CMPowerTech",
     portfolio15Desc:
       "Sitio institucional informativo con comunicación clara y profesional.",
+    portfolio16Titulo: "Redes",
+    portfolio16Desc:
+      "Sostenibilidad pesquera con plataforma de información y trazabilidad del recurso.",
+    portfolio17Titulo: "Livet Perfumes",
+    portfolio17Desc:
+      "E-commerce de perfumería con catálogo elegante y experiencia de compra fluida.",
+    portfolio18Titulo: "Clínica Privada del Carmen",
+    portfolio18Desc:
+      "Sitio institucional para clínica privada con presentación de servicios médicos.",
+    portfolio19Titulo: "Alac Ohh",
+    portfolio19Desc:
+      "Plataforma web institucional con información clara y diseño profesional.",
     verTrabajo: "Ver trabajo",
 
     // Problemas / Soluciones
@@ -379,9 +391,9 @@ export const translations = {
     portfolio5Titulo: "Hola Mundo Store",
     portfolio5Desc:
       "Catalog website similar to ecommerce for product sales via WhatsApp.",
-    portfolio6Titulo: "Tecnocell Company",
+    portfolio6Titulo: "Proyecto Patitas",
     portfolio6Desc:
-      "Modern web catalog and fluid usability for direct order taking.",
+      "Social platform for adopting puppies and responsible pet ownership, connecting rescuers with adopters.",
     portfolio7Titulo: "Constanza Estevan",
     portfolio7Desc:
       "Personal site with careful aesthetics and professional presentation.",
@@ -409,6 +421,18 @@ export const translations = {
     portfolio15Titulo: "CMPowerTech",
     portfolio15Desc:
       "Informative institutional site with clear and professional communication.",
+    portfolio16Titulo: "Redes",
+    portfolio16Desc:
+      "Fishery sustainability platform with resource information and traceability.",
+    portfolio17Titulo: "Livet Perfumes",
+    portfolio17Desc:
+      "Perfume e-commerce with an elegant catalog and smooth shopping experience.",
+    portfolio18Titulo: "Clínica Privada del Carmen",
+    portfolio18Desc:
+      "Institutional site for a private clinic presenting its medical services.",
+    portfolio19Titulo: "Alac Ohh",
+    portfolio19Desc:
+      "Institutional web platform with clear information and professional design.",
     verTrabajo: "View work",
 
     // Problemas / Soluciones

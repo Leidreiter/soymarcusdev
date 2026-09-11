@@ -24,6 +24,9 @@ export default function Portfolio() {
           tileWidth={155}
           tileHeight={110}
           gap={10}
+          tilt={8}
+          turn={0}
+          fade={0.35}
           speed={45}
           pauseOnHover
         />
