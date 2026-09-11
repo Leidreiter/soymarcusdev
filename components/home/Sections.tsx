@@ -79,7 +79,7 @@ function Historia() {
   );
 }
 
-function Servicios() {
+export function Servicios() {
   const { t } = useLanguage();
 
   return (
@@ -108,6 +108,15 @@ function Servicios() {
         </div>
       </FadeContent>
     </div>
+  );
+}
+
+export function SeccionSuperior() {
+  return (
+    <>
+      <Numeros />
+      <Historia />
+    </>
   );
 }
 

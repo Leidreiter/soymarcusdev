@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import styles from "@/styles/home.module.scss";
 import Sidebar from "@/components/home/Sidebar";
 import Hero from "@/components/home/Hero";
-import Sections from "@/components/home/Sections";
+import { SeccionSuperior, Servicios } from "@/components/home/Sections";
 import Portfolio from "@/components/home/Portfolio";
 import Testimonios from "@/components/home/Testimonios";
 import Paquetes from "@/components/home/Paquetes";
+import UltimosPosts from "@/components/home/UltimosPosts";
 import Contacto from "@/components/home/Contacto";
 import { Proyectos } from "@/components/home/Proyectos";
 import Menu from "@/components/home/Menu";
@@ -17,7 +18,7 @@ import ClickSpark from "@/components/reactbits/ClickSpark/ClickSpark";
 import FloatingCta from "@/components/FloatingCta/FloatingCta";
 
 export default function HomeClient() {
-  const mainRef = useRef<HTMLElement>(null);
+  const layoutRef = useRef<HTMLDivElement>(null);
   const [desktop, setDesktop] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -34,12 +35,12 @@ export default function HomeClient() {
   }, []);
 
   useEffect(() => {
-    const main = mainRef.current;
-    if (!main) return;
+    const layout = layoutRef.current;
+    if (!layout) return;
     if (desktop && open) {
-      main.classList.add("open");
+      layout.classList.add("open");
     } else {
-      main.classList.remove("open");
+      layout.classList.remove("open");
     }
   }, [desktop, open]);
 
@@ -48,28 +49,31 @@ export default function HomeClient() {
   };
 
   return (
-    <div className={styles.layout}>
+    <div className={styles.layout} ref={layoutRef}>
       <div className={styles["contenedor_info"]} id="perfil-sidebar">
         <Sidebar />
       </div>
 
-      <main className={styles["main-content"]} ref={mainRef}>
-        <div className={styles.contentMain}>
-          <Hero />
-          <Sections />
-          <Portfolio />
-          <Testimonios />
-          <Paquetes />
-          <Contacto />
-          <Proyectos />
-        </div>
+      <section className={styles["parte-1"]}>
+        <Hero />
+        <SeccionSuperior />
+      </section>
 
-        <aside className={styles.sidebar}>
-          <div className={styles["contenido-sidebar"]}>
-            <Menu onToggleMenu={toggleMenu} />
-          </div>
-        </aside>
-      </main>
+      <div className={styles["parte-2"]}>
+        <Servicios />
+        <Portfolio />
+        <Testimonios />
+        <Paquetes />
+        <UltimosPosts />
+        <Contacto />
+        <Proyectos />
+      </div>
+
+      <aside className={styles.sidebar}>
+        <div className={styles["contenido-sidebar"]}>
+          <Menu onToggleMenu={toggleMenu} open={desktop && open} />
+        </div>
+      </aside>
 
       <SiteGlowCursor />
       <ClickSpark fixed sparkColor="#22D3EE" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400} />

@@ -12,8 +12,6 @@ import {
 } from "@/lib/site";
 import FadeContent from "@/components/reactbits/FadeContent/FadeContent";
 import Magnet from "@/components/reactbits/Magnet/Magnet";
-import DepthCarousel from "@/components/reactbits/DepthCarousel/DepthCarousel";
-import { POSTS } from "@/lib/site";
 
 function IdiomaItem({
   porcentaje,
@@ -211,33 +209,6 @@ export default function Sidebar() {
             </Magnet>
           ))}
         </footer>
-      </FadeContent>
-
-      <FadeContent delay={720} duration={700}>
-        <section className={styles.posts}>
-          <DepthCarousel
-            items={POSTS}
-            cardWidth={240}
-            cardHeight={400}
-            radius={16}
-            tint="#05060a"
-            depth={180}
-            spread={70}
-            tilt={22}
-            tiltDirection="right"
-            perspective={1400}
-            visibleCards={3}
-            falloff={0.2}
-            blur={6}
-            duration={700}
-            ease="power3.out"
-            autoplay
-            autoplayDelay={3800}
-            loop
-            showControls={false}
-            showIndicators
-          />
-        </section>
       </FadeContent>
     </>
   );

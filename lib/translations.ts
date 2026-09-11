@@ -64,6 +64,8 @@ export const translations = {
 
     // Paquetes
     paquetesTitulo: "Paquetes",
+    ultimosPosts: "Últimos posts",
+    verPost: "Ver post",
     paquete1Nombre: "Starter",
     paquete1Item1: "Web One Page o Landing Page moderna y responsive",
     paquete1Item2: "Secciones principales: hasta 6 bloques de contenido",
@@ -305,6 +307,8 @@ export const translations = {
 
     // Packages
     paquetesTitulo: "Packages",
+    ultimosPosts: "Latest posts",
+    verPost: "View post",
     paquete1Nombre: "Starter",
     paquete1Item1: "Modern and responsive One Page or Landing Page website",
     paquete1Item2: "Main sections: up to 6 content blocks",

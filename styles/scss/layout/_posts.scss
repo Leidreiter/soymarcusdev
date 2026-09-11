@@ -1,5 +1,16 @@
+@use '../base/variables' as v;
+
 /* Posts (galería TikTok) */
 
-.posts {
-    display: block;
+.ultimosposts h2 {
+    color: v.$blanco;
+    margin: 3rem 1rem;
+}
+
+.carousel-posts {
+    width: 100%;
+    height: 32rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

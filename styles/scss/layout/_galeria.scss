@@ -6,103 +6,12 @@
     margin: 3rem 1rem;
 }
 
-.portfolio {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* CARD */
-.card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-  transition: transform 0.3s ease;
-  background-image: url('/img/portfolio/bg-dark.png');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* IMAGEN */
-.card-image img {
-  width: 30%;
-  padding: 2rem 0;
-  margin: 0 auto;
-  display: block;
-  @include m.tablet{
-    width: 50%;
-    padding: 4rem 0;
-  }
-}
-
-/* INFO OCULTA (DESKTOP) */
-.card-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+/* DRIFTWALL */
+.driftwall-container {
   width: 100%;
-  background: v.$f-secundario;
-  color: #fff;
-  padding: 2rem;
-  transform: translateY(100%);
-  transition: transform 0.4s ease;
-}
-
-.card:hover .card-info {
-  transform: translateY(0);
-}
-
-.card-info h3 {
-  margin: 0 0 10px;
-}
-
-.card-info p {
-  margin: 0 0 15px;
-  opacity: 0.9;
-}
-
-.card-info a {
-    color: v.$primario;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.card-info a:hover {
-    cursor: pointer;
-}
-
-/* 🟢 RESPONSIVE - MÓVIL */
-@media (max-width: 768px) {
-  .portfolio {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    transform: none;
-  }
-
-  /* En móvil la info se muestra debajo */
-  .card-info {
-    position: static;
-    transform: none;
-    background: #222;
-  }
-
-  .card:hover .card-info {
-    transform: none;
-  }
-}
-
-.card-image {
+  height: 68rem;
+  margin-bottom: 2rem;
   @include m.tablet{
-    height: 100%;
+    height: 60rem;
   }
-  
 }

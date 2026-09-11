@@ -33,25 +33,33 @@ export default function Testimonios() {
     const onResize = () => {
       medir();
       setIndex((prev) => {
-        const max = Math.max(0, total - 1);
-        return prev > max ? max : prev;
+        const ultimoInicio = Math.max(0, (cantDots - 1) * perView);
+        return prev > ultimoInicio ? ultimoInicio : prev;
       });
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, [medir, total]);
+  }, [medir, total, cantDots, perView]);
 
   const moverA = useCallback((pos: number) => {
     setIndex(pos * perView);
   }, [perView]);
 
   const next = useCallback(() => {
-    setIndex((prev) => (prev < total - 1 ? prev + 1 : 0));
-  }, [total]);
+    setIndex((prev) => {
+      const vista = Math.floor(prev / perView);
+      const siguiente = (vista + 1) % cantDots;
+      return siguiente * perView;
+    });
+  }, [perView, cantDots]);
 
   const prev = useCallback(() => {
-    setIndex((prev) => (prev > 0 ? prev - 1 : total - 1));
-  }, [total]);
+    setIndex((prev) => {
+      const vista = Math.floor(prev / perView);
+      const anterior = vista - 1 < 0 ? cantDots - 1 : vista - 1;
+      return anterior * perView;
+    });
+  }, [perView, cantDots]);
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
     dragState.current = {
@@ -85,10 +93,10 @@ export default function Testimonios() {
     const diff = st.startX - st.currentX;
     const threshold = 50;
     if (Math.abs(diff) > threshold) {
-      if (diff > 0) setIndex((value) => (value < total - 1 ? value + 1 : 0));
-      else setIndex((value) => (value > 0 ? value - 1 : total - 1));
+      if (diff > 0) next();
+      else prev();
     }
-  }, [total]);
+  }, [next, prev]);
 
   const onPointerLeave = useCallback(() => {
     if (dragState.current.isDragging) endDrag();
