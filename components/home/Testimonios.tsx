@@ -137,7 +137,7 @@ export default function Testimonios() {
                 glowIntensity={0.9}
                 coneSpread={22}
                 glowColor="262 86 63"
-                colors={["#22D3EE", "#8B5CF6", "#EC4899"]}
+                colors={["#8B5CF6", "#22D3EE", "#EC4899"]}
                 fillOpacity={0.45}
               >
                 <div className={styles["testimonial-card"]}>

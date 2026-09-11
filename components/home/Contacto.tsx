@@ -131,12 +131,12 @@ export default function Contacto() {
               <StarBorder
                 type="submit"
                 className={styles["boton-star"]}
-                color="#8B5CF6"
+                color="#22D3EE"
                 speed="6s"
                 thickness={2}
                 backgroundColor="#0B0A14"
                 textColor="#FFFFFF"
-                borderColor="#06B6D4"
+                borderColor="#7C3AED"
                 borderRadius={999}
               >
                 {t.formBoton} <i className="fab fa-whatsapp iconBtn"></i>

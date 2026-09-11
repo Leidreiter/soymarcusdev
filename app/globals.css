@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --primario: #22D3EE;
-  --primario-hover: #06B6D4;
-  --acento: #8B5CF6;
-  --acento-hover: #7C3AED;
-  --gradiente-primario: linear-gradient(135deg, #22D3EE 0%, #8B5CF6 100%);
+  --primario: #8B5CF6;
+  --primario-hover: #7C3AED;
+  --acento: #22D3EE;
+  --acento-hover: #06B6D4;
+  --gradiente-primario: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%);
   --f-primario: #0B0A14;
   --f-secundario: #14121F;
   --f-terciario: #06060C;
