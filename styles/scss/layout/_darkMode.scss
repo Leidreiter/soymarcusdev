@@ -402,12 +402,7 @@ body:global(.light-mode) .footer a:hover {
 
 /* Cambio de overlay del hero - más sutil en light mode */
 body:global(.light-mode) .hero .overlay {
-  background-image: linear-gradient(
-  90deg,
-  rgba(255, 255, 255, 0.15) 15%,
-  rgba(255, 255, 255, 0.1) 50%,
-  rgba(250, 250, 250, 0.08) 100%
-);
+  background-image: none;
 }
 
 /* Hero title y typewriter se mantienen blancos en light mode */
