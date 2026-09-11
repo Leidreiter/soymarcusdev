@@ -20,9 +20,10 @@ export default function Portfolio() {
       <div className={styles["driftwall-container"]}>
         <DriftWall
           items={items}
-          columns={5}
-          tileWidth={240}
-          tileHeight={170}
+          columns={7}
+          tileWidth={155}
+          tileHeight={110}
+          gap={10}
           speed={45}
           pauseOnHover
         />
