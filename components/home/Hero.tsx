@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import styles from "@/styles/home.module.scss";
 import { useLanguage } from "@/app/providers/language";
 import { useTheme } from "@/app/providers/theme";
@@ -20,6 +21,30 @@ export default function Hero() {
   const { isDark, toggleTheme } = useTheme();
   const typed = useTypewriter(t.heroTypewriterTexts);
   const titleLines = TITLE_LINES[lang] ?? TITLE_LINES.es;
+  const [ocultaMovil, setOcultaMovil] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    if (!mq.matches) return;
+
+    const update = () => {
+      const hero = document.getElementById("hero-section");
+      if (!hero) return;
+      setOcultaMovil(window.scrollY > hero.offsetTop + hero.offsetHeight * 3);
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    const onMqChange = (e: MediaQueryListEvent) => {
+      if (!e.matches) setOcultaMovil(false);
+    };
+    mq.addEventListener("change", onMqChange);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      mq.removeEventListener("change", onMqChange);
+    };
+  }, []);
 
   return (
     <div className={styles.hero} id="hero-section">
@@ -39,7 +64,7 @@ export default function Hero() {
       />
       <div className={styles.overlay}>
         <div className={styles["hero-copy"]}>
-<div className={styles["hero-titulo"]}>
+          <div className={styles["hero-titulo"]}>
             <h1>
               <span>{titleLines[0]}</span>
               <br aria-hidden="true" />
@@ -49,7 +74,7 @@ export default function Hero() {
 
           <div className={styles.typewriter}>
             <p>
-<span className={styles["texto-color"]}>&lt; Yo &gt;</span>
+              <span className={styles["texto-color"]}>&lt; Yo &gt;</span>
               <span className={styles.type}>{typed}</span>
             </p>
           </div>
@@ -74,7 +99,12 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className={styles["hero-imagen"]}>
+        <div
+          className={
+            styles["hero-imagen"] +
+            (ocultaMovil ? " " + styles.oculta : "")
+          }
+        >
           <FadeContent delay={150} duration={700} blur>
             <div className={styles.switchs}>
               <a href="#home">

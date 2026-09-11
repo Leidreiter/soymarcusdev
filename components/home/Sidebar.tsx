@@ -11,7 +11,6 @@ import {
   REDES_FOOTER,
 } from "@/lib/site";
 import FadeContent from "@/components/reactbits/FadeContent/FadeContent";
-import Magnet from "@/components/reactbits/Magnet/Magnet";
 
 function IdiomaItem({
   porcentaje,
@@ -197,16 +196,15 @@ export default function Sidebar() {
       <FadeContent delay={640} duration={700}>
         <footer className={styles.redes}>
           {REDES_FOOTER.map((red) => (
-            <Magnet key={red.label} padding={24} magnetStrength={2}>
-              <a
-                href={red.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={red.label}
-              >
-                <i className={red.icon}></i>
-              </a>
-            </Magnet>
+            <a
+              key={red.label}
+              href={red.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={red.label}
+            >
+              <i className={red.icon}></i>
+            </a>
           ))}
         </footer>
       </FadeContent>

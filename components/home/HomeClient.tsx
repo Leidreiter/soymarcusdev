@@ -71,7 +71,7 @@ export default function HomeClient() {
 
       <aside className={styles.sidebar}>
         <div className={styles["contenido-sidebar"]}>
-          <Menu onToggleMenu={toggleMenu} open={desktop && open} />
+          <Menu onToggleMenu={toggleMenu} />
         </div>
       </aside>
 
