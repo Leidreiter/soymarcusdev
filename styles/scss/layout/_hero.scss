@@ -120,23 +120,7 @@
 
 
   .hero-imagen {
-    height: 8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: fixed;
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-    z-index: 99999;
-    background-color: rgba(255, 166, 0, 0);
-    backdrop-filter: blur(.6rem);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 2.4rem;
-    margin: 0;
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    display: none;
 
     &.oculta {
       opacity: 0;
@@ -144,7 +128,6 @@
       pointer-events: none;
     }
 
-    
     @include m.tablet {
       position: relative;
       width: 60%;
@@ -156,9 +139,6 @@
       align-items: flex-end;
       opacity: 0;
       animation: fadeIn 3s forwards;
-      background-color: none;
-      backdrop-filter: none;
-      border: none;
     }
   }
 
