@@ -6,6 +6,8 @@ import { useLanguage } from "@/app/providers/language";
 import { TESTIMONIOS } from "@/lib/site";
 import BorderGlow from "@/components/reactbits/BorderGlow/BorderGlow";
 
+const AUTO_MS = 5000;
+
 function testimoniosPorVista() {
   return typeof window !== "undefined" && window.innerWidth <= 768 ? 1 : 2;
 }
@@ -17,6 +19,7 @@ export default function Testimonios() {
   const [slideWidth, setSlideWidth] = useState(0);
   const [perView, setPerView] = useState(2);
   const [dragging, setDragging] = useState(false);
+  const [paused, setPaused] = useState(false);
   const dragState = useRef({ startX: 0, currentX: 0, startTransform: 0, isDragging: false });
 
   const total = TESTIMONIOS.length;
@@ -41,10 +44,6 @@ export default function Testimonios() {
     return () => window.removeEventListener("resize", onResize);
   }, [medir, total, cantDots, perView]);
 
-  const moverA = useCallback((pos: number) => {
-    setIndex(pos * perView);
-  }, [perView]);
-
   const next = useCallback(() => {
     setIndex((prev) => {
       const vista = Math.floor(prev / perView);
@@ -60,6 +59,14 @@ export default function Testimonios() {
       return anterior * perView;
     });
   }, [perView, cantDots]);
+
+  const isPaused = paused || dragging;
+
+  useEffect(() => {
+    if (isPaused) return;
+    const id = setTimeout(() => next(), AUTO_MS);
+    return () => clearTimeout(id);
+  }, [index, isPaused, next]);
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
     dragState.current = {
@@ -105,7 +112,11 @@ export default function Testimonios() {
   return (
     <div className={styles.testimonials}>
       <h2>{t.testimonialesTitulo}</h2>
-      <div className={styles["testimonial-container"]}>
+      <div
+        className={styles["testimonial-container"]}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <div
           className={styles["testimonial-track"]}
           ref={trackRef}
@@ -151,16 +162,18 @@ export default function Testimonios() {
           ))}
         </div>
 
+        <div className={styles["testimonial-timer"]} aria-hidden="true">
+          <div
+            key={`${index}-${String(isPaused)}`}
+            className={styles["testimonial-timer-fill"]}
+            style={{
+              animationDuration: `${AUTO_MS}ms`,
+              animationPlayState: isPaused ? "paused" : "running",
+            }}
+          />
+        </div>
+
         <div className={styles["testimonial-nav"]}>
-          <div className={styles.dots}>
-            {Array.from({ length: cantDots }).map((_, i) => (
-              <div
-                key={i}
-                className={`${styles.dot} ${i === Math.floor(index / perView) ? styles["active"] : ""}`}
-                onClick={() => moverA(i)}
-              ></div>
-            ))}
-          </div>
           <div className={styles.arrows}>
             <button className={styles.arrow} onClick={prev}>
               &lsaquo;

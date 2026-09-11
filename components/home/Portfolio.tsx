@@ -22,11 +22,12 @@ export default function Portfolio() {
           items={items}
           columns={7}
           tileWidth={155}
-          tileHeight={110}
+          tileHeight={100}
           gap={10}
           tilt={8}
           turn={0}
           fade={0.35}
+          dim={0.68}
           speed={45}
           pauseOnHover
         />
