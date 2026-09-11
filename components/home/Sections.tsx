@@ -90,7 +90,7 @@ export function Servicios() {
           {SERVICIOS.map((servicio) => (
             <ElectricBorder
               key={servicio.tituloKey}
-              color="#8B5CF6"
+              color="#22D3EE"
               speed={1}
               chaos={0.12}
               borderRadius={16}

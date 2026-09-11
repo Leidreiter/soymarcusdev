@@ -18,7 +18,7 @@ export default function Paquetes() {
             <SpotlightCard
               key={paquete.nombreKey}
               className={`${styles.paquete} border-transparent!`}
-              spotlightColor="rgba(139, 92, 246, 0.25)"
+              spotlightColor="rgba(34, 211, 238, 0.25)"
             >
               <div className={`${styles["icono_paq"]} ${styles[paquete.iconoClase]}`}></div>
               {paquete.ribbonKey ? (

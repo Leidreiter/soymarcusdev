@@ -76,7 +76,7 @@ export default function HomeClient() {
       </aside>
 
       <SiteGlowCursor />
-      <ClickSpark fixed sparkColor="#22D3EE" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400} />
+      <ClickSpark fixed sparkColor="#8B5CF6" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400} />
       <Noise patternAlpha={10} />
       <FloatingCta />
     </div>

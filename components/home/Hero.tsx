@@ -51,8 +51,8 @@ export default function Hero() {
       <AeroShards
         className={styles["hero-shards"]}
         backgroundColor="#0B0A14"
-        shardColor="#8B5CF6"
-        accentColor="#22D3EE"
+        shardColor="#22D3EE"
+        accentColor="#8B5CF6"
         placement="full"
         flow="stream"
         material="chrome"
@@ -85,12 +85,12 @@ export default function Hero() {
                 as="a"
                 href="#portfolio"
                 className={styles["hero-boton-star"]}
-                color="#22D3EE"
+                color="#8B5CF6"
                 speed="6s"
                 thickness={2}
                 backgroundColor="#0B0A14"
                 textColor="#FFFFFF"
-                borderColor="#7C3AED"
+                borderColor="#06B6D4"
                 borderRadius={999}
               >
                 {t.heroBoton} <i className="fa-solid fa-arrow-trend-up iconBtn"></i>
