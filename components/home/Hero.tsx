@@ -131,11 +131,9 @@ export default function Hero() {
                   <path className="sunRay sunRay8" d="m17.3 6.7 1.77-1.77"></path>
                 </svg>
               </label>
-              <Magnet padding={34} magnetStrength={2}>
-                <a href={WHATSAPP_HERO_URL} target="_blank" rel="noopener noreferrer">
-                  <div className={styles["icon-ws"]}></div>
-                </a>
-              </Magnet>
+              <a href={WHATSAPP_HERO_URL} target="_blank" rel="noopener noreferrer">
+                <div className={styles["icon-ws"]}></div>
+              </a>
             </div>
           </FadeContent>
 
