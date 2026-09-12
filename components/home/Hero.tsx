@@ -77,8 +77,10 @@ export default function Hero() {
         <div className={styles["hero-imagen"]}>
           <FadeContent delay={150} duration={700} blur>
             <div className={styles.switchs}>
-              <a href="#home">
-                <div className={styles["icon-home"]}></div>
+              <a href="#home" aria-label="Inicio">
+                <div className={styles["icon-home"]}>
+                  <i className="fa-solid fa-house" aria-hidden="true"></i>
+                </div>
               </a>
               <label className={styles["switch-idioma"]}>
                 <span className="sr-only">{t.srIdioma}</span>
@@ -131,8 +133,10 @@ export default function Hero() {
                   <path className="sunRay sunRay8" d="m17.3 6.7 1.77-1.77"></path>
                 </svg>
               </label>
-              <a href={WHATSAPP_HERO_URL} target="_blank" rel="noopener noreferrer">
-                <div className={styles["icon-ws"]}></div>
+              <a href={WHATSAPP_HERO_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <div className={styles["icon-ws"]}>
+                  <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                </div>
               </a>
             </div>
           </FadeContent>
