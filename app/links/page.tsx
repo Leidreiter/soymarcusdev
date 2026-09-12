@@ -10,18 +10,18 @@ export const metadata: Metadata = {
     canonical: "https://soymarcus.dev/links",
   },
   openGraph: {
-    title: "@soymarcusdev | Diseñador, UX/UI & Web Developer",
+    title: "@soymarcusdev | Todos mis links",
     description:
-      "Creador de contenido tech. Diseño webs que no solo se ven bien, sino que funcionan.",
+      "Creador de contenido tech. Encuentra mis redes sociales, recursos y contacto para colaboraciones.",
     type: "website",
     url: "https://soymarcus.dev/links",
     images: ["/images/preview.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "@soymarcusdev | Diseñador, UX/UI & Web Developer",
+    title: "@soymarcusdev | Todos mis links",
     description:
-      "Diseño webs que no solo se ven bien, sino que funcionan. Mirá mis proyectos, servicios y portfolio.",
+      "Creador de contenido tech. Encuentra mis redes sociales, recursos y contacto para colaboraciones.",
     images: ["/images/preview.jpg"],
   },
 };

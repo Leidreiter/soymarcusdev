@@ -63,7 +63,7 @@ export default function Hero() {
                 color="#22D3EE"
                 speed="6s"
                 thickness={2}
-                backgroundColor="#0B0A14"
+                backgroundColor={isDark ? "#0B0A14" : "#7C3AED"}
                 textColor="#FFFFFF"
                 borderColor="#7C3AED"
                 borderRadius={999}

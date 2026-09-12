@@ -25,8 +25,6 @@ export const translations = {
     cvPath: "/docs/CV-ES-MartinLeidreiter.pdf",
 
     // Hero
-    heroTitulo: "Creo soluciones digitales para hacer crecer tu proyecto",
-    heroTypewriter: "<Yo>",
     heroBoton: "Descubrelo ahora",
     heroTypewriterTexts: [
       "creo marcas memorables.",
@@ -181,7 +179,6 @@ export const translations = {
     portfolio20Titulo: "Code Injection",
     portfolio20Desc:
       "Web de emprendimiento tecnológico con estética moderna y contenido claro.",
-    verTrabajo: "Ver trabajo",
 
     // Problemas / Soluciones
     problemasTitulo: "Tu problema",
@@ -239,7 +236,6 @@ export const translations = {
     formOrigenOp2: "Google",
     formOrigenOp3: "Recomendación",
     formNombre: "Dime tu nombre",
-    formEmail: "Tu Email (opcional)",
     formMensaje: "Dejame tu mensaje, consulta o comentario",
     formBoton: "Enviar mensaje",
 
@@ -283,8 +279,6 @@ export const translations = {
     cvPath: "/docs/CV-EN-MartinLeidreiter.pdf",
 
     // Hero
-    heroTitulo: "Professional custom web design and development.",
-    heroTypewriter: "<Me>",
     heroBoton: "Discover now",
     heroTypewriterTexts: [
       "build memorable brands.",
@@ -439,7 +433,6 @@ export const translations = {
     portfolio20Titulo: "Code Injection",
     portfolio20Desc:
       "Tech venture website with modern aesthetics and clear content.",
-    verTrabajo: "View work",
 
     // Problemas / Soluciones
     problemasTitulo: "Your problem",
@@ -497,7 +490,6 @@ export const translations = {
     formOrigenOp2: "Google",
     formOrigenOp3: "Recommendation",
     formNombre: "Tell me your name",
-    formEmail: "Your Email (optional)",
     formMensaje: "Leave me your message, question or comment",
     formBoton: "Send message",
 

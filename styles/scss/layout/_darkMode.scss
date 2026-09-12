@@ -164,17 +164,14 @@ body:global(.light-mode) .idioma .percentage {
 body:global(.light-mode) .progress-rect {
   stroke: v.$primario-hover;
 }
-/* Cambio color habilidades y dot testimoniales*/
-body:global(.light-mode) .fill,
-body:global(.light-mode) .dot{
+/* Cambio color habilidades */
+body:global(.light-mode) .fill {
   background: v.$primario-hover;
 }
-/* Cambio color conocimientos, link tienda, yo(hero), btn hero, dot testimoniales, dots timeline, menu*/
+/* Cambio color conocimientos, yo(hero), botones servicios, dots timeline, menu */
 body:global(.light-mode) .skills-list li::before,
-body:global(.light-mode) .publi-link:hover,
 body:global(.light-mode) .texto-color,
 body:global(.light-mode) .servicio-link,
-body:global(.light-mode) .card-info a,
 body:global(.light-mode) .paquete-link,
 body:global(.light-mode) .timeline-item::before,
 body:global(.light-mode) .menu-items a:hover
@@ -188,6 +185,12 @@ body:global(.light-mode) .icon-form,
 body:global(.light-mode) .boton button
 {
   background-color: v.$primario-hover;
+}
+
+/* Fondo de los botones StarBorder (hero y formulario) en light mode */
+body:global(.light-mode) [class*="boton-star"] [class*="innerContent"],
+body:global(.light-mode) [class*="hero-boton-star"] [class*="innerContent"] {
+  background: v.$primario-hover !important;
 }
 
 /* Cambio color ribbon paquetes */
@@ -236,11 +239,6 @@ body:global(.light-mode) .mis-datos {
 /* Cambio de color de nombre en header - de blanco a oscuro */
 body:global(.light-mode) .mis-datos .nombre {
   color: #333;
-}
-
-/* Cambio de fondo del círculo de idiomas - de dark (#1a1a22) a light (#f0f0f0) */
-body:global(.light-mode) .bitmoji {
-  background-color: #f0f0f0;
 }
 
 
@@ -341,11 +339,6 @@ body:global(.light-mode) .arrow:hover {
   background: #d0d0d0;
 }
 
-/* Cambio de color de dot activo - de dark (#333) a light (#999) */
-body:global(.light-mode) .dot.active {
-  background: #999;
-}
-
 /* Cambio de color de texto en trabajos - de blanco a oscuro */
 body:global(.light-mode) .trabajos h2 {
   color: #333;
@@ -414,7 +407,6 @@ body:global(.light-mode) .typewriter {
 /* Cambio de fondo de números - de dark (#20202a) a light (#ffffff) */
 body:global(.light-mode) .numero {
   background:none;
-  border: 1px solid #e0e0e0;
   color: #333;
 }
 
@@ -459,28 +451,6 @@ body:global(.light-mode) .timeline-item p {
 /* Cambio de fondo de tecnologías - mantener transparente pero ajustar si es necesario */
 body:global(.light-mode) .tecnologias {
   background-color: transparent;
-}
-
-/* Cambio de fondo de tienda */
-body:global(.light-mode) .publi {
-  border: 1px solid #e0e0e0;
-  background-color: #ffffff;
-}
-
-
-body:global(.light-mode) .publi-overlay{
-  background: rgba(255, 255, 255, 0.835);
-}
-
-body:global(.light-mode) .publi-link{
-  color: #333;
-}
-body:global(.light-mode) .publi-sabias p{
-  color: #333;
-}
-
-body:global(.light-mode) .publilogo1{
-  background-image: url('/img/logo-hms-dm.svg');
 }
 
 body:global(.light-mode) .iconBtn{

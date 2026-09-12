@@ -3,6 +3,7 @@
 import type { FormEvent } from "react";
 import styles from "@/styles/home.module.scss";
 import { useLanguage } from "@/app/providers/language";
+import { useTheme } from "@/app/providers/theme";
 import { CONTACTO_INFO, WHATSAPP_NUMBER } from "@/lib/site";
 import FadeContent from "@/components/reactbits/FadeContent/FadeContent";
 import Magnet from "@/components/reactbits/Magnet/Magnet";
@@ -34,6 +35,7 @@ function BlockInfo({ indices }: { indices: [number, number] }) {
 
 export default function Contacto() {
   const { t } = useLanguage();
+  const { isDark } = useTheme();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -120,7 +122,7 @@ export default function Contacto() {
                 color="#22D3EE"
                 speed="6s"
                 thickness={2}
-                backgroundColor="#0B0A14"
+                backgroundColor={isDark ? "#0B0A14" : "#7C3AED"}
                 textColor="#FFFFFF"
                 borderColor="#7C3AED"
                 borderRadius={999}

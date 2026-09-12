@@ -119,13 +119,3 @@ export function SeccionSuperior() {
     </>
   );
 }
-
-export default function Sections() {
-  return (
-    <>
-      <Numeros />
-      <Historia />
-      <Servicios />
-    </>
-  );
-}

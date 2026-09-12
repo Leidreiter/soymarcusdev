@@ -146,6 +146,10 @@
 
     @include m.tablet {
       position: relative;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      right: auto;
       width: 60%;
       height: 100%;
       margin-right: 2.4rem;

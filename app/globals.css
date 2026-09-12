@@ -50,6 +50,11 @@ body {
   background-color: var(--f-primario);
 }
 
+::selection {
+  background: var(--acento);
+  color: var(--negro);
+}
+
 p,
 li {
   font-size: 1.4rem;
