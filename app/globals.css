@@ -23,7 +23,7 @@
   --color-f-secundario: var(--f-secundario);
   --color-f-terciario: var(--f-terciario);
   --color-gris-claro: var(--gris-claro);
-  --font-sans: var(--font-montserrat), sans-serif;
+  --font-sans: system-ui, sans-serif;
 }
 
 /* ============ Base (port de _globales.scss) ============ */
@@ -42,12 +42,33 @@ html {
 }
 
 body {
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: system-ui, sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   color: var(--negro);
   font-size: 1.6rem;
   background-color: var(--f-primario);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+  font-size: inherit;
 }
 
 ::selection {
@@ -82,37 +103,45 @@ a {
   margin: 0;
 }
 
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
+h1 { font-size: 2.4rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 2.4rem; }
 
 @media (min-width: 481px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.8rem; }
-  h3 { font-size: 1.6rem; }
+  h1 { font-size: 4.8rem; }
+h2 { font-size: 2.4rem; }
+  h3 { font-size: 3rem; }
 }
 
 @media (min-width: 769px) {
-  h1 { font-size: 2.4rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.7rem; font-weight: normal; }
+  h1 { font-size: 4.8rem; }
+  h2 { font-size: 4rem; }
+  h3 { font-size: 3rem; font-weight: normal; }
 }
 
 @media (min-width: 1201px) {
-  h1 { font-size: 3.6rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.8rem; }
+  h1 { font-size: 4.8rem; }
+  h2 { font-size: 4rem; }
+  h3 { font-size: 3rem; }
 }
 
 @media (min-width: 1441px) {
-  h1 { font-size: 3.8rem; }
-  h2 { font-size: 2.4rem; }
-  h3 { font-size: 2rem; }
+  h1 { font-size: 4.8rem; }
+  h2 { font-size: 4rem; }
+  h3 { font-size: 3rem; }
 }
 
 h4 {
-  font-size: 10px;
+  font-size: 2.4rem;
   margin-top: 4px;
+}
+
+h5 {
+  font-size: 2.4rem;
+}
+
+h6 {
+  font-size: 2.4rem;
 }
 
 img {

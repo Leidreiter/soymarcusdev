@@ -49,15 +49,9 @@
 
   .hero-titulo h1 {
     color: v.$blanco;
-    font-weight: bold;
-    margin: 0;
+    font-weight: 500;
     text-wrap: balance;
-    font-size: clamp(2rem, 3.6vw, 3.6rem);
-    line-height: 40px;
-
-    span {
-      font-size: inherit;
-    }
+    line-height: 1.05;
   }
 
   .typewriter {

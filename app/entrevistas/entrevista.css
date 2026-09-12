@@ -28,6 +28,20 @@
     overflow-x: hidden;
   }
 
+  /* Excluir los títulos de esta ruta del tipado global de headings (Barlow itálica uppercase) */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: normal;
+    text-transform: none;
+    font-size: inherit;
+  }
+
   /* ── NOISE OVERLAY ── */
   body::before {
     content: '';

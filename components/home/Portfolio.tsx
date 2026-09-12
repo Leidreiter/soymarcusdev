@@ -22,7 +22,7 @@ export default function Portfolio() {
           items={items}
           columns={7}
           tileWidth={155}
-          tileHeight={100}
+          tileHeight={90}
           gap={10}
           tilt={8}
           turn={0}

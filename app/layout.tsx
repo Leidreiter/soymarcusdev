@@ -1,12 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat, Inter, Unbounded, DM_Sans } from "next/font/google";
+import { Barlow_Condensed, Inter, Unbounded, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./providers/language";
 import { ThemeProvider } from "./providers/theme";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const barlow = Barlow_Condensed({
+  variable: "--font-barlow",
   subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
 });
 
 const inter = Inter({
@@ -65,7 +67,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${montserrat.variable} ${inter.variable} ${unbounded.variable} ${dmSans.variable}`}
+      className={`${barlow.variable} ${inter.variable} ${unbounded.variable} ${dmSans.variable}`}
       suppressHydrationWarning
     >
       <head>

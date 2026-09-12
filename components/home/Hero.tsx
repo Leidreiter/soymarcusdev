@@ -11,7 +11,7 @@ import StarBorder from "@/components/reactbits/StarBorder/StarBorder";
 import AeroShards from "@/components/reactbits/AeroShards/AeroShards";
 
 const TITLE_LINES: Record<string, string[]> = {
-  es: ["Creo soluciones digitales", "para hacer crecer tu proyecto"],
+  es: ["Creo soluciones digitales", "para hacer crecer tu proyecto o negocio"],
   en: ["Create digital solutions", "to grow your project"],
 };
 
