@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow_Condensed, Inter, Unbounded, DM_Sans } from "next/font/google";
+import { Barlow_Condensed, Unbounded, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./providers/language";
 import { ThemeProvider } from "./providers/theme";
@@ -9,11 +9,6 @@ const barlow = Barlow_Condensed({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
 });
 
 const unbounded = Unbounded({
@@ -67,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${barlow.variable} ${inter.variable} ${unbounded.variable} ${dmSans.variable}`}
+      className={`${barlow.variable} ${unbounded.variable} ${dmSans.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -93,7 +88,7 @@ export default function RootLayout({
                 "https://www.linkedin.com/in/leidreiter/",
                 "https://www.behance.net/leidreiter",
                 "https://github.com/Leidreiter",
-                "https://www.tiktok.com/@soymarcus.dev",
+                "https://www.tiktok.com/@soymarcusdev",
                 "https://www.twitch.tv/soymarcusdev",
                 "https://www.youtube.com/@soymarcusdev",
                 "https://x.com/soymarcusdev",

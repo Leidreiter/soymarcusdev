@@ -23,7 +23,7 @@ export const REDES_FOOTER = [
   },
 ];
 
-const TIKTOK_BASE = "https://www.tiktok.com/@soymarcus.dev/video/";
+const TIKTOK_BASE = "https://www.tiktok.com/@soymarcusdev/video/";
 
 export const POSTS = [
   { image: `/img/posts/11.png`, href: `${TIKTOK_BASE}7679082540916952328` },
@@ -40,7 +40,7 @@ export const POSTS = [
   { image: `/img/posts/22.png`, href: `${TIKTOK_BASE}7681489877107477778` },
   { image: `/img/posts/23.png`, href: `${TIKTOK_BASE}7681717345961790738` },
   { image: `/img/posts/24.png`, href: `${TIKTOK_BASE}7681797282206895368` },
-].map((post) => ({ ...post, alt: "@soymarcus.dev - Post en TikTok" }));
+].map((post) => ({ ...post, alt: "@soymarcusdev - Post en TikTok" }));
 
 export const HABILIDADES_TECNICAS = [
   "fa-brands fa-html5",

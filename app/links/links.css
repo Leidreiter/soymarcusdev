@@ -50,7 +50,7 @@
   --transition-slow: 0.5s ease;
 
   /* Font */
-  --font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family: "system-ui", sans-serif;
 }
 
 /* ===== RESET & BASE ===== */
