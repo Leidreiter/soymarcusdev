@@ -99,14 +99,16 @@ export default function Sidebar() {
         <FadeContent delay={0} duration={700}>
           <div className={styles.logo}>
             <div className={styles.pulseOnline}></div>
-            <picture>
-              <source srcSet="/img/perfil.svg" type="image/webp" />
-              <img
-                loading="lazy"
-                src="/img/perfil.png"
-                alt="Logo @soymarcusdev - Martin Leidreiter"
-              />
-            </picture>
+            <a href="/" target="_self" aria-label="Ir al inicio de la web">
+              <picture>
+                <source srcSet="/img/perfil.svg" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="/img/perfil.png"
+                  alt="Logo @soymarcusdev - Martin Leidreiter"
+                />
+              </picture>
+            </a>
           </div>
         </FadeContent>
 
