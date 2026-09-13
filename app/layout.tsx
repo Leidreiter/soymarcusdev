@@ -7,7 +7,7 @@ import { ThemeProvider } from "./providers/theme";
 const barlow = Barlow_Condensed({
   variable: "--font-barlow",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
 });
 

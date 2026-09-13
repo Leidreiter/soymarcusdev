@@ -229,7 +229,10 @@ h6 {
 
 .profile-name {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  text-transform: uppercase;
   letter-spacing: -0.02em;
   margin-bottom: var(--spacing-xs);
 }
