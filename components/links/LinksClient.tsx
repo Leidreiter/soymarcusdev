@@ -7,8 +7,13 @@ import SiteGlowCursor from "@/components/reactbits/GlowCursor/SiteGlowCursor";
 const SOCIALS = [
   {
     icon: "fa-brands fa-tiktok",
-    href: "https://www.tiktok.com/@soymarcus.dev",
+    href: "https://www.tiktok.com/@soymarcusdev",
     label: "TikTok",
+  },
+  {
+    icon: "fa-brands fa-instagram",
+    href: "https://www.instagram.com/soymarcusdev/",
+    label: "Instagram",
   },
   {
     icon: "fa-brands fa-twitch",
