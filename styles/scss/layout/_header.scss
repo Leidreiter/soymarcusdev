@@ -2,11 +2,9 @@
 @use '../base/mixins' as m;
 
 .header {
-    @include m.tablet {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .perfil {
