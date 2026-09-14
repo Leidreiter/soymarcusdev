@@ -119,28 +119,16 @@
 }
 
 .drift-wall--compact {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
   -webkit-mask-image: none;
   mask-image: none;
 }
 
-.drift-wall--compact::-webkit-scrollbar {
-  height: 6px;
-}
-
-.drift-wall--compact::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.drift-wall--compact::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.22);
-  border-radius: 999px;
+.drift-wall--compact .drift-wall__plane {
+  flex-direction: column;
 }
 
 .drift-wall--compact .drift-wall__col {
+  width: 100%;
   height: var(--dw-tile-h);
   overflow: hidden;
 }
