@@ -148,19 +148,8 @@ export default function Hero() {
                 " " +
                 styles.foto +
                 " " +
-                styles["cursor-reveal"]
+                styles["glitch-reveal"]
               }
-              onPointerMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                e.currentTarget.style.setProperty(
-                  "--mx",
-                  `${e.clientX - rect.left}px`
-                );
-                e.currentTarget.style.setProperty(
-                  "--my",
-                  `${e.clientY - rect.top}px`
-                );
-              }}
             >
               <img
                 className={styles["reveal-base"]}

@@ -2,9 +2,11 @@
 @use '../base/mixins' as m;
 
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    @include m.tablet {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 }
 
 .perfil {
@@ -20,6 +22,7 @@
     gap: 2rem;
     align-items: center;
     justify-content: center;
+    transition: padding 0.3s ease;
 
     @include m.tablet {
 
@@ -39,6 +42,13 @@
         width: 9rem;
         height: 9rem;
         border-radius: 5rem;
+        transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+}
+
+:global(.header--collapsed) .logo img {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 2.5rem;
 }
 
 .mis-datos {
@@ -60,6 +70,11 @@
             font-weight: bold;
             color: v.$blanco;
             margin: .8rem 0;
+        }
+
+        .puesto {
+            display: block;
+            margin-bottom: .4rem;
         }
 }
 
@@ -97,5 +112,166 @@
 
     100% {
         box-shadow: 0 0 0 0 rgba(200, 200, 200, 0);
+    }
+}
+
+/* Header collapsed (móvil) */
+@media (max-width: v.$tablet - 1px) {
+    :global(.header--collapsed) {
+        padding: 1rem 2rem;
+        gap: 1rem;
+        background-color: rgba(20, 18, 31, 0.9);
+        border-radius: 1.5rem;
+        justify-content: space-between;
+    }
+
+    :global(.header--collapsed) .puesto {
+        display: none;
+    }
+
+    :global(.header--collapsed) .pulseOnline {
+        display: none;
+    }
+}
+
+@media (min-width: v.$tablet) {
+    :global(.header--collapsed) {
+        padding: 2rem;
+        gap: 0;
+    }
+}
+
+/* Botón hamburguesa del header colapsado (móvil) */
+.hamburguesa-colapsada {
+    display: none;
+    float: right;
+
+    @media (max-width: v.$tablet - 1px) {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 4rem;
+        height: 4rem;
+        padding: 0 0.9rem;
+        margin-left: auto;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: v.$blanco;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+
+            &:nth-child(2) {
+                width: 70%;
+                margin-left: auto;
+            }
+        }
+
+        &.activo {
+            span:nth-child(1) {
+                transform: translateY(0.85rem) rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+            }
+
+            span:nth-child(3) {
+                transform: translateY(-0.85rem) rotate(-45deg);
+            }
+        }
+    }
+}
+
+/* Side menu móvil */
+.side-menu-movil {
+    display: none;
+
+    @media (max-width: v.$tablet - 1px) {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(0.2rem);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 50000;
+
+        &.abierto {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    }
+}
+
+.side-menu-contenido {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(80%, 30rem);
+    background: v.$f-secundario;
+    border-left: 1px solid #ffffff20;
+    box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+
+    .abierto & {
+        transform: translateX(0);
+    }
+}
+
+.side-menu-cerrar {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: v.$blanco;
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.side-menu-nav {
+    margin-top: 2rem;
+}
+
+.side-menu-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a {
+        color: v.$grisClaro;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+        padding: 0.8rem 1rem;
+        border-radius: 0.75rem;
+        transition: color 0.3s ease, background 0.3s ease;
+
+        &:hover {
+            color: v.$blanco;
+            background: rgba(139, 92, 246, 0.15);
+        }
+    }
+
+    a.color {
+        color: v.$primario;
     }
 }

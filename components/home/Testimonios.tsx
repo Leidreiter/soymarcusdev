@@ -44,6 +44,21 @@ export default function Testimonios() {
     return () => window.removeEventListener("resize", onResize);
   }, [medir, total, cantDots, perView]);
 
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const onSizeChange = () => {
+      medir();
+      setIndex((prev) => {
+        const ultimoInicio = Math.max(0, (cantDots - 1) * perView);
+        return prev > ultimoInicio ? ultimoInicio : prev;
+      });
+    };
+    const ro = new ResizeObserver(onSizeChange);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [medir, cantDots, perView]);
+
   const next = useCallback(() => {
     setIndex((prev) => {
       const vista = Math.floor(prev / perView);
@@ -175,11 +190,11 @@ export default function Testimonios() {
 
         <div className={styles["testimonial-nav"]}>
           <div className={styles.arrows}>
-            <button className={styles.arrow} onClick={prev}>
-              &lsaquo;
+            <button className={styles.arrow} onClick={prev} aria-label="Anterior">
+              <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
             </button>
-            <button className={styles.arrow} onClick={next}>
-              &rsaquo;
+            <button className={styles.arrow} onClick={next} aria-label="Siguiente">
+              <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </button>
           </div>
         </div>

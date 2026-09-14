@@ -10,7 +10,9 @@ export default function Menu({ onToggleMenu }: { onToggleMenu?: () => void }) {
   return (
     <div className={styles.menu}>
       <button className={styles["hamburger-menu"]} onClick={onToggleMenu} aria-label="Menú">
-        &#9776;
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
       <ul className={styles["menu-items"]}>
         {MENU_ITEMS.map((item) => (

@@ -243,8 +243,9 @@ body:global(.light-mode) .mis-datos .nombre {
 
 
 
-body:global(.light-mode) .hamburger-menu{
-    color: #333;
+body:global(.light-mode) .hamburger-menu span,
+body:global(.light-mode) .hamburguesa-colapsada span {
+    background-color: #333;
 }
 
 /* Cambio de fondo de la barra de habilidades - de dark (#222) a light (#e0e0e0) */
@@ -329,14 +330,13 @@ body:global(.light-mode) .stars {
   background-color: #f0f0f0;
 }
 
-/* Cambio de fondo de botones de navegación - de dark (#333) a light (#e0e0e0) */
+/* Cambio de sombra de botones de navegación en light mode - se mantiene el gradiente */
 body:global(.light-mode) .arrow {
-  background: #e0e0e0;
-  color: #333;
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.35), 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 body:global(.light-mode) .arrow:hover {
-  background: #d0d0d0;
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.55), 0 0 16px rgba(34, 211, 238, 0.4);
 }
 
 /* Cambio de color de texto en trabajos - de blanco a oscuro */

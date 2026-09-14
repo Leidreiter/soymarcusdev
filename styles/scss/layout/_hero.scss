@@ -216,8 +216,8 @@
   display: block;
 }
 
-/* Cursor Reveal Effect */
-.cursor-reveal {
+/* Efecto Glitch en loop - revela la foto inferior (reemplaza el cursor reveal) */
+.glitch-reveal {
   .reveal-base {
     width: 100%;
     display: block;
@@ -229,14 +229,107 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    -webkit-mask-image: radial-gradient(circle 0px at 50% 50%, black 100%, transparent 100%);
-    mask-image: radial-gradient(circle 0px at 50% 50%, black 100%, transparent 100%);
     pointer-events: none;
+    z-index: 2;
+    opacity: 0;
   }
 
-  &:hover .reveal-target {
-    -webkit-mask-image: radial-gradient(circle 30px at var(--mx, 50%) var(--my, 50%), black 60%, transparent 100%);
-    mask-image: radial-gradient(circle 30px at var(--mx, 50%) var(--my, 50%), black 60%, transparent 100%);
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-target {
+      animation: glitch-loop 7s steps(1, end) infinite;
+    }
+  }
+}
+
+@keyframes glitch-loop {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    filter: none;
+  }
+
+  2% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    filter: none;
+  }
+
+  2.5% {
+    opacity: 1;
+    clip-path: inset(52% 0 38% 0);
+    filter: none;
+  }
+
+  3.5% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: none;
+  }
+
+  4.5% {
+    opacity: 1;
+    clip-path: inset(12% 0 76% 0);
+    filter: none;
+  }
+
+  5.5% {
+    opacity: 1;
+    clip-path: inset(70% 0 6% 0);
+    filter: none;
+  }
+
+  6% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    filter: none;
+  }
+
+  62% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    filter: none;
+  }
+
+  62.5% {
+    opacity: 1;
+    clip-path: inset(30% 0 58% 0);
+    filter: none;
+  }
+
+  63.5% {
+    opacity: 1;
+    clip-path: inset(6% 0 82% 0);
+    filter: none;
+  }
+
+  64.5% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: none;
+  }
+
+  65.5% {
+    opacity: 1;
+    clip-path: inset(80% 0 8% 0);
+    filter: none;
+  }
+
+  66% {
+    opacity: 1;
+    clip-path: inset(44% 0 46% 0);
+    filter: none;
+  }
+
+  67% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    filter: none;
+  }
+
+  100% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    filter: none;
   }
 }
 
@@ -248,6 +341,7 @@
   flex-direction: column;
   justify-content: space-around;
   pointer-events: none;
+  z-index: 3;
 }
 
 

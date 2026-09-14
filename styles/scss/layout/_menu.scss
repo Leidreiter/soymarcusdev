@@ -14,26 +14,56 @@ body {
 
   @include m.tablet {
     text-align: center;
-    position: fixed;
+    position: sticky;
+    top: 1rem;
   }
 }
 
 .hamburger-menu {
-  font-size: 3rem;
   display: none;
-  padding: 0;
-  
 
   @include m.tablet {
-    display: block;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    padding: 0 0.9rem;
     background: none;
     border: none;
-    color: v.$blanco;
     cursor: pointer;
     margin-bottom: 1.2rem;
     align-self: center;
-  }
+    position: relative;
+    z-index: 2;
 
+    span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: v.$blanco;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      &:nth-child(2) {
+        width: 70%;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.layout:global(.open) .hamburger-menu span:nth-child(1) {
+  transform: translateY(0.85rem) rotate(45deg);
+}
+
+.layout:global(.open) .hamburger-menu span:nth-child(2) {
+  opacity: 0;
+}
+
+.layout:global(.open) .hamburger-menu span:nth-child(3) {
+  transform: translateY(-0.85rem) rotate(-45deg);
 }
 
 

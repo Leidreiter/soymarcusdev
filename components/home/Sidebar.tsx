@@ -8,6 +8,7 @@ import {
   HABILIDADES,
   HABILIDADES_TECNICAS,
   IDIOMAS_DATOS,
+  MENU_ITEMS,
   REDES_FOOTER,
 } from "@/lib/site";
 import FadeContent from "@/components/reactbits/FadeContent/FadeContent";
@@ -92,10 +93,33 @@ function IdiomaItem({
 
 export function SidebarHeader() {
   const { t } = useLanguage();
+  const [collapsed, setCollapsed] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const isMobile = () => !window.matchMedia("(min-width: 768px)").matches;
+    const onScroll = () => {
+      if (!isMobile()) {
+        setCollapsed(false);
+        return;
+      }
+      setCollapsed(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    mediaQuery.addEventListener("change", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      mediaQuery.removeEventListener("change", onScroll);
+    };
+  }, []);
 
   return (
     <>
-      <header id="home" className={`${styles.header} ${styles.perfil}`}>
+      <header
+        id="home"
+        className={`${styles.header} ${styles.perfil} ${collapsed ? "header--collapsed" : ""}`}
+      >
         <FadeContent delay={0} duration={700}>
           <div className={styles.logo}>
             <div className={styles.pulseOnline}></div>
@@ -120,7 +144,58 @@ export function SidebarHeader() {
             <span className={styles.puesto}>{t.puesto3}</span>
           </div>
         </FadeContent>
+
+        {collapsed && (
+          <button
+            type="button"
+            className={`${styles["hamburguesa-colapsada"]} ${menuOpen ? styles["activo"] : ""}`}
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label="Abrir menú"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        )}
       </header>
+
+      {collapsed && (
+        <div
+          className={`${styles["side-menu-movil"]} ${menuOpen ? styles["abierto"] : ""}`}
+          onClick={() => setMenuOpen(false)}
+        >
+          <div
+            className={styles["side-menu-contenido"]}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className={styles["side-menu-cerrar"]}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Cerrar menú"
+            >
+              &times;
+            </button>
+            <nav className={styles["side-menu-nav"]}>
+              <ul className={styles["side-menu-lista"]}>
+                {MENU_ITEMS.map((item) => (
+                  <li key={item.labelKey}>
+                    <a
+                      href={item.href}
+                      target={item.target}
+                      rel={item.target ? "noreferrer" : undefined}
+                      className={item.color ? styles.color : undefined}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {t[item.labelKey]}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      )}
     </>
   );
 }
