@@ -119,6 +119,8 @@ export const translations = {
 
     // Portfolio
     portfolioTitulo: "Trabajos",
+    portfolioVerTodos: "Ver todos",
+    portfolioVerMenos: "Ver menos",
     portfolio1Titulo: "La Veneciana",
     portfolio1Desc:
       "Web corporativa sencilla para comunicación de productos y sucursales.",
@@ -373,6 +375,8 @@ export const translations = {
 
     // Portfolio
     portfolioTitulo: "Works",
+    portfolioVerTodos: "View all",
+    portfolioVerMenos: "Show less",
     portfolio1Titulo: "La Veneciana",
     portfolio1Desc:
       "Simple corporate website for product and branch communication.",
