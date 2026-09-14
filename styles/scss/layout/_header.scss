@@ -117,6 +117,10 @@
 
 /* Header collapsed (móvil) */
 @media (max-width: v.$tablet - 1px) {
+    .header {
+        margin-top: 10px;
+    }
+
     :global(.header--collapsed) {
         padding: 1rem 2rem;
         gap: 1rem;
