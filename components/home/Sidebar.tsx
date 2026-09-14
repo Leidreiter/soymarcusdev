@@ -90,7 +90,7 @@ function IdiomaItem({
   );
 }
 
-export default function Sidebar() {
+export function SidebarHeader() {
   const { t } = useLanguage();
 
   return (
@@ -121,7 +121,15 @@ export default function Sidebar() {
           </div>
         </FadeContent>
       </header>
+    </>
+  );
+}
 
+export function SidebarBody() {
+  const { t } = useLanguage();
+
+  return (
+    <>
       <FadeContent delay={160} duration={700}>
         <div className={styles.informacion}>
           <div className={styles.info}>
@@ -210,6 +218,15 @@ export default function Sidebar() {
           ))}
         </footer>
       </FadeContent>
+    </>
+  );
+}
+
+export default function Sidebar() {
+  return (
+    <>
+      <SidebarHeader />
+      <SidebarBody />
     </>
   );
 }

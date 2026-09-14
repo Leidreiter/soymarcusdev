@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "@/styles/home.module.scss";
-import Sidebar from "@/components/home/Sidebar";
+import { SidebarHeader, SidebarBody } from "@/components/home/Sidebar";
 import Hero from "@/components/home/Hero";
 import { SeccionSuperior, Servicios } from "@/components/home/Sections";
 import Portfolio from "@/components/home/Portfolio";
@@ -51,7 +51,10 @@ export default function HomeClient() {
   return (
     <div className={styles.layout} ref={layoutRef}>
       <div className={styles["contenedor_info"]} id="perfil-sidebar">
-        <Sidebar />
+        <SidebarHeader />
+        <div className={styles["sidebar-contenido"]}>
+          <SidebarBody />
+        </div>
       </div>
 
       <section className={styles["parte-1"]}>
@@ -65,6 +68,9 @@ export default function HomeClient() {
         <Testimonios />
         <Paquetes />
         <UltimosPosts />
+        <div className={styles["sidebar-movil"]}>
+          <SidebarBody />
+        </div>
         <Contacto />
         <Proyectos />
       </div>
