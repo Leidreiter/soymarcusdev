@@ -10,9 +10,15 @@
 /* DRIFTWALL */
 .driftwall-container {
   width: 100%;
-  height: 68rem;
+  height: 22rem;
   margin-bottom: 2rem;
+  @include m.tel{
+    height: 24rem;
+  }
   @include m.tablet{
-    height: 60rem;
+    height: 28rem;
+  }
+  @include m.desk{
+    height: 68rem;
   }
 }

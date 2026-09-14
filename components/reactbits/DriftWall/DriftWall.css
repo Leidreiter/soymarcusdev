@@ -118,6 +118,37 @@
     0 0 0 2px rgba(255, 255, 255, 0.9);
 }
 
+.drift-wall--compact {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.drift-wall--compact::-webkit-scrollbar {
+  height: 6px;
+}
+
+.drift-wall--compact::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.drift-wall--compact::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+}
+
+.drift-wall--compact .drift-wall__col {
+  height: var(--dw-tile-h);
+  overflow: hidden;
+}
+
+.drift-wall--compact .drift-wall__track {
+  flex-direction: row;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .drift-wall__plane,
   .drift-wall__track {

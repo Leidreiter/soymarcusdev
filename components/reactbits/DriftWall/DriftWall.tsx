@@ -38,6 +38,11 @@ interface ColumnMeta {
   copies: number;
 }
 
+interface TrackMeta {
+  copyWidth: number;
+  copies: number;
+}
+
 const prefersReducedMotion = (): boolean =>
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -85,6 +90,9 @@ const DriftWall = ({
   const lastTsRef = useRef<number | null>(null);
 
   const [containerHeight, setContainerHeight] = useState(600);
+  const [compact, setCompact] = useState(false);
+  const compactRef = useRef(false);
+  const lastWidthRef = useRef(0);
   const [activeId, setActiveId] = useState<string | null>(null);
   const activeIdRef = useRef<string | null>(null);
   const [reduced, setReduced] = useState(false);
@@ -112,6 +120,18 @@ const DriftWall = ({
     });
   }, [columnItems, tileHeight, gap, containerHeight]);
 
+  const compactThreshold = useMemo(() => columns * (tileWidth + gap), [columns, tileWidth, gap]);
+
+  const trackMeta = useMemo<TrackMeta[]>(() => {
+    const unitW = tileWidth + gap;
+    const refW = Math.max(1, columns * unitW);
+    return columnItems.map(col => {
+      const copyWidth = Math.max(unitW, col.length * unitW);
+      const copies = Math.max(2, Math.ceil((refW * 1.6) / copyWidth) + 1);
+      return { copyWidth, copies };
+    });
+  }, [columnItems, tileWidth, gap, columns]);
+
   useLayoutEffect(() => {
     if (!containerRef.current) return;
     const ro = new ResizeObserver(([entry]) => {
@@ -130,16 +150,20 @@ const DriftWall = ({
   }, [columnItems, speed, direction, variance]);
 
   useEffect(() => {
-    offsetsRef.current = columnMeta.map((meta, c) => meta.copyHeight * ((c * 0.37) % 1));
+    offsetsRef.current = (compact ? trackMeta : columnMeta).map((meta, c) => {
+      const cycle = meta.copyHeight ?? meta.copyWidth;
+      return cycle * ((c * 0.37) % 1);
+    });
     velocitiesRef.current = columnItems.map(() => 0);
-  }, [columnMeta, columnItems]);
+  }, [columnMeta, trackMeta, columnItems, compact]);
 
   const applyPlaneTransform = useCallback(
     (px: number, py: number) => {
       const plane = planeRef.current;
       if (!plane) return;
+      plane.style.left = compactRef.current ? '0px' : '50%';
       plane.style.transform =
-        `translate(-50%, -50%) scale(1.18) ` +
+        `translate(${compactRef.current ? '0' : '-50%'}, -50%) scale(1.18) ` +
         `rotateX(${tilt + py}deg) rotateY(${turn + px}deg) rotateZ(${roll}deg) ` +
         `translateZ(${-depth}px)`;
     },
@@ -152,6 +176,19 @@ const DriftWall = ({
       const dt = Math.min(0.05, Math.max(0, ts - lastTsRef.current) / 1000);
       lastTsRef.current = ts;
 
+      const host = containerRef.current;
+      if (host) {
+        const w = host.clientWidth;
+        if (lastWidthRef.current !== w) {
+          lastWidthRef.current = w;
+          const next = w > 0 && w < compactThreshold;
+          if (compactRef.current !== next) {
+            compactRef.current = next;
+            setCompact(next);
+          }
+        }
+      }
+
       const maxTilt = parallax * 8;
       const targetX = pointerRef.current.x * maxTilt;
       const targetY = -pointerRef.current.y * maxTilt;
@@ -161,27 +198,45 @@ const DriftWall = ({
       applyPlaneTransform(pointerDampedRef.current.x, pointerDampedRef.current.y);
 
       if (!reduced) {
+        const isCompact = compactRef.current;
         for (let c = 0; c < trackRefs.current.length; c++) {
-          const meta = columnMeta[c];
+          const meta = isCompact ? trackMeta[c] : columnMeta[c];
           if (!meta) continue;
+          const cycle = meta.copyHeight ?? meta.copyWidth;
           const paused = wallHoveredRef.current && pauseOnHover;
           const factor = paused || hoveredColRef.current === c ? 0 : 1;
-          const target = baseVelocities[c] * factor;
+          const rawTarget = baseVelocities[c] * factor;
+          const target = isCompact ? Math.abs(rawTarget) : rawTarget;
 
           const ease = 1 - Math.exp(-dt / (target === 0 ? 0.16 : 0.28));
           velocitiesRef.current[c] += (target - velocitiesRef.current[c]) * ease;
           let next = (offsetsRef.current[c] ?? 0) + velocitiesRef.current[c] * dt;
-          next = ((next % meta.copyHeight) + meta.copyHeight) % meta.copyHeight;
+          next = ((next % cycle) + cycle) % cycle;
           offsetsRef.current[c] = next;
 
           const el = trackRefs.current[c];
-          if (el) el.style.transform = `translate3d(0, ${-next}px, 0)`;
+          if (el) {
+            if (isCompact) {
+              const dir = c % 2 === 0 ? 1 : -1;
+              el.style.transform = `translate3d(${dir * next}px, 0, 0)`;
+            } else {
+              el.style.transform = `translate3d(0, ${-next}px, 0)`;
+            }
+          }
         }
       } else {
+        const isCompact = compactRef.current;
         for (let c = 0; c < trackRefs.current.length; c++) {
           const el = trackRefs.current[c];
-          const meta = columnMeta[c];
-          if (el && meta) el.style.transform = `translate3d(0, ${-(offsetsRef.current[c] ?? 0)}px, 0)`;
+          const meta = isCompact ? trackMeta[c] : columnMeta[c];
+          if (!el || !meta) continue;
+          const off = offsetsRef.current[c] ?? 0;
+          if (isCompact) {
+            const dir = c % 2 === 0 ? 1 : -1;
+            el.style.transform = `translate3d(${dir * off}px, 0, 0)`;
+          } else {
+            el.style.transform = `translate3d(0, ${-off}px, 0)`;
+          }
         }
       }
 
@@ -194,7 +249,7 @@ const DriftWall = ({
       rafRef.current = null;
       lastTsRef.current = null;
     };
-  }, [baseVelocities, columnMeta, pauseOnHover, parallax, reduced, applyPlaneTransform]);
+  }, [baseVelocities, columnMeta, trackMeta, pauseOnHover, parallax, reduced, compactThreshold, applyPlaneTransform]);
 
   const activate = useCallback((id: string, index: number): void => {
     activeIdRef.current = id;
@@ -281,7 +336,7 @@ const DriftWall = ({
     );
   };
 
-  const rootClass = ['drift-wall', reduced ? 'drift-wall--reduced' : '', className].filter(Boolean).join(' ');
+  const rootClass = ['drift-wall', compact ? 'drift-wall--compact' : '', reduced ? 'drift-wall--reduced' : '', className].filter(Boolean).join(' ');
 
   return (
     <div
@@ -298,7 +353,8 @@ const DriftWall = ({
     >
       <div ref={planeRef} className="drift-wall__plane">
         {columnItems.map((col, c) => {
-          const meta = columnMeta[c];
+          const meta = compact ? trackMeta[c] : columnMeta[c];
+          if (!meta) return null;
           const copies = Array.from({ length: meta.copies });
           return (
             <div className="drift-wall__col" key={`col-${c}`}>
