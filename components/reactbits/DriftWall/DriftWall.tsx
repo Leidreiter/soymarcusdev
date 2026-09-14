@@ -151,7 +151,7 @@ const DriftWall = ({
 
   useEffect(() => {
     offsetsRef.current = (compact ? trackMeta : columnMeta).map((meta, c) => {
-      const cycle = meta.copyHeight ?? meta.copyWidth;
+      const cycle = 'copyHeight' in meta ? meta.copyHeight : meta.copyWidth;
       return cycle * ((c * 0.37) % 1);
     });
     velocitiesRef.current = columnItems.map(() => 0);
@@ -202,7 +202,7 @@ const DriftWall = ({
         for (let c = 0; c < trackRefs.current.length; c++) {
           const meta = isCompact ? trackMeta[c] : columnMeta[c];
           if (!meta) continue;
-          const cycle = meta.copyHeight ?? meta.copyWidth;
+          const cycle = 'copyHeight' in meta ? meta.copyHeight : meta.copyWidth;
           const paused = wallHoveredRef.current && pauseOnHover;
           const factor = paused || hoveredColRef.current === c ? 0 : 1;
           const rawTarget = baseVelocities[c] * factor;
