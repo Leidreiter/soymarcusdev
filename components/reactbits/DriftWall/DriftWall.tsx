@@ -120,7 +120,8 @@ const DriftWall = ({
     });
   }, [columnItems, tileHeight, gap, containerHeight]);
 
-  const compactThreshold = useMemo(() => columns * (tileWidth + gap), [columns, tileWidth, gap]);
+  // Solo telefeno: filas horizontales apiladas. Tablets y desktop mantienen columnas verticales.
+  const compactThreshold = useMemo(() => 520, []);
 
   const trackMeta = useMemo<TrackMeta[]>(() => {
     const unitW = tileWidth + gap;
