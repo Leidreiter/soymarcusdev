@@ -69,6 +69,7 @@ export default function HomeClient() {
         <Paquetes />
         <UltimosPosts />
         <div className={styles["sidebar-movil"]}>
+          <h2 className={styles["titulo-sobre-mi"]}>Sobre mí</h2>
           <SidebarBody />
         </div>
         <Contacto />
