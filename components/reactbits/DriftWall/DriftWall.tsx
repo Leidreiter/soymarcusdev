@@ -218,7 +218,8 @@ const DriftWall = ({
           if (el) {
             if (isCompact) {
               const dir = c % 2 === 0 ? 1 : -1;
-              el.style.transform = `translate3d(${dir * next}px, 0, 0)`;
+              const base = trackMeta[c].copyWidth;
+              el.style.transform = `translate3d(${dir === 1 ? next - base : -next}px, 0, 0)`;
             } else {
               el.style.transform = `translate3d(0, ${-next}px, 0)`;
             }
@@ -233,7 +234,8 @@ const DriftWall = ({
           const off = offsetsRef.current[c] ?? 0;
           if (isCompact) {
             const dir = c % 2 === 0 ? 1 : -1;
-            el.style.transform = `translate3d(${dir * off}px, 0, 0)`;
+            const base = 'copyWidth' in meta ? meta.copyWidth : meta.copyHeight;
+            el.style.transform = `translate3d(${dir === 1 ? off - base : -off}px, 0, 0)`;
           } else {
             el.style.transform = `translate3d(0, ${-off}px, 0)`;
           }

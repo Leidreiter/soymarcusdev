@@ -124,6 +124,7 @@
 }
 
 .drift-wall--compact .drift-wall__plane {
+  width: 100%;
   flex-direction: column;
 }
 
@@ -135,6 +136,13 @@
 
 .drift-wall--compact .drift-wall__track {
   flex-direction: row;
+  flex-wrap: nowrap;
+  width: max-content;
+}
+
+.drift-wall--compact .drift-wall__tile {
+  width: calc(var(--dw-tile-w) + var(--dw-gap));
+  flex: 0 0 calc(var(--dw-tile-w) + var(--dw-gap));
 }
 
 @media (prefers-reduced-motion: reduce) {
