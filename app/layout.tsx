@@ -29,7 +29,8 @@ export const metadata: Metadata = {
   description:
     "@soymarcusdev: diseñador, UX/UI y web developer. Diseño webs que no solo se ven bien, sino que funcionan. Mirá mis proyectos, servicios y lo que puedo crear para tu marca.",
   icons: {
-    icon: "/images/favicon.svg",
+    icon: ["/images/favicon.svg", "/icon.png"],
+    apple: ["/apple-icon.png"],
   },
   openGraph: {
     title: "@soymarcusdev | Diseñador, UX/UI & Web Developer",
