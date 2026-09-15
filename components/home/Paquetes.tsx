@@ -21,9 +21,6 @@ export default function Paquetes() {
               spotlightColor="rgba(139, 92, 246, 0.25)"
             >
               <div className={`${styles["icono_paq"]} ${styles[paquete.iconoClase]}`}></div>
-              {paquete.ribbonKey ? (
-                <div className={styles.ribbon}>{t[paquete.ribbonKey]}</div>
-              ) : null}
               <h3 className={styles["paquete-titulo"]}>{t[paquete.nombreKey]}</h3>
               <ul className={styles.lista}>
                 {paquete.itemsKeys.map((itemKey) => (

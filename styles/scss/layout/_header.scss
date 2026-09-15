@@ -79,17 +79,6 @@
 }
 
 
-.pulse {
-        position: absolute;
-        width: 1rem;
-        height: 1rem;
-        background-color: v.$primario;
-        border-radius: 50%;
-        bottom: 1rem;
-        right: 1rem;
-        animation: pulso 2s infinite;
-}
-
 .pulseOnline {
     position: absolute;
     width: 1rem;

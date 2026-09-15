@@ -189,29 +189,6 @@ h6 {
   }
 }
 
-.profile-placeholder {
-  width: 110px;
-  height: 110px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #fff;
-  box-shadow: var(--shadow-md), var(--shadow-glow);
-  border: 3px solid rgba(255, 255, 255, 0.2);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.profile-placeholder:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-lg), 0 0 50px rgba(139, 92, 246, 0.4);
-}
-
-/* If using a real image, replace .profile-placeholder with:
-   <img src="profile.jpg" alt="..." class="profile-img"> */
 .profile-img {
   width: 80px;
   height: 80px;
@@ -389,39 +366,6 @@ h6 {
   gap: var(--spacing-sm);
 }
 
-.link-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  flex-shrink: 0;
-  transition: background var(--transition-base), color var(--transition-base);
-}
-
-.link-icon svg {
-  width: 20px;
-  height: 20px;
-}
-
-.link-icon i {
-  font-size: 1.15rem;
-}
-
-.link-btn:hover .link-icon {
-  background: rgba(139, 92, 246, 0.25);
-  color: #fff;
-}
-
-.link-label {
-  flex: 1;
-  position: relative;
-  z-index: 1;
-}
-
 .link-arrow {
   color: var(--text-muted);
   font-size: 0.85rem;
@@ -430,7 +374,6 @@ h6 {
   z-index: 1;
 }
 
-.link-btn:hover .link-arrow,
 .resource-card:hover .link-arrow {
   transform: translateX(4px);
   color: #8b5cf6;
@@ -490,25 +433,6 @@ h6 {
 
 .resource-card--coming-soon:hover {
   opacity: 1;
-}
-
-/* Icon used as favicon replacement in project cards */
-.link-icon--project {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.link-icon--project i {
-  font-size: 1rem;
 }
 
 .resource-favicon {
@@ -697,19 +621,12 @@ h6 {
   margin-bottom: var(--spacing-xs);
 }
 
-.visit-count {
-  margin-top: var(--spacing-md);
-  font-size: 0.75rem !important;
-  color: var(--text-muted) !important;
-}
-
 /* ===== RESPONSIVE — Tablet & Desktop ===== */
 @media (min-width: 600px) {
   .container {
     padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-xl);
   }
 
-  .profile-placeholder,
   .profile-img {
     width: 90px;
     height: 90px;
@@ -751,7 +668,6 @@ h6 {
   .social-icon,
   .resource-card,
   .freebie-card,
-  .profile-placeholder,
   .profile-img,
   .link-arrow,
   .email-link {

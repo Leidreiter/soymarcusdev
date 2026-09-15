@@ -193,12 +193,6 @@ body:global(.light-mode) [class*="hero-boton-star"] [class*="innerContent"] {
   background: v.$primario-hover !important;
 }
 
-/* Cambio color ribbon paquetes */
-body:global(.light-mode) .ribbon{
-  background-color: v.$primario-hover;
-  color: v.$blanco;
-}
-
 body:global(.light-mode) .paq1{
     background-image: url('/img/iconos/icon1LM.svg');
 }
@@ -446,11 +440,6 @@ body:global(.light-mode) .timeline-item .date {
 /* Cambio de color de texto en timeline - de gris claro a oscuro */
 body:global(.light-mode) .timeline-item p {
   color: #666;
-}
-
-/* Cambio de fondo de tecnologías - mantener transparente pero ajustar si es necesario */
-body:global(.light-mode) .tecnologias {
-  background-color: transparent;
 }
 
 body:global(.light-mode) .iconBtn{

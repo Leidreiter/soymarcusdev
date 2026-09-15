@@ -81,6 +81,7 @@
   box-sizing: border-box;
   margin: 0 auto;
   transition: width 0.25s ease;
-  overflow: hidden;
+  overflow: visible;
   margin-bottom: 10rem;
+  z-index: 2;
 }

@@ -86,7 +86,6 @@ export const PAQUETES = [
   {
     iconoClase: "paq1",
     nombreKey: "paquete1Nombre" as const,
-    ribbon: null,
     itemsKeys: [
       "paquete1Item1",
       "paquete1Item2",
@@ -99,7 +98,6 @@ export const PAQUETES = [
   {
     iconoClase: "paq2",
     nombreKey: "paquete2Nombre" as const,
-    ribbonKey: "paquete2Ribbon" as const,
     itemsKeys: [
       "paquete2Item1",
       "paquete2Item2",
@@ -112,7 +110,6 @@ export const PAQUETES = [
   {
     iconoClase: "paq3",
     nombreKey: "paquete3Nombre" as const,
-    ribbon: null,
     itemsKeys: [
       "paquete3Item1",
       "paquete3Item2",
@@ -171,7 +168,6 @@ export const TESTIMONIOS = [
 
 export const PORTFOLIO = [
   {
-    png: "/img/portfolio/la-veneciana.png",
     webp: "/img/portfolio/la-veneciana.webp",
     url: "https://laveneciana.com.ar/",
     tituloKey: "portfolio1Titulo" as const,
@@ -179,7 +175,6 @@ export const PORTFOLIO = [
     alt: "La Veneciana – Helados + Café + Delikatessen",
   },
   {
-    png: "/img/portfolio/margaret.png",
     webp: "/img/portfolio/margaret.webp",
     url: "https://margaretautomotores.com/",
     tituloKey: "portfolio2Titulo" as const,
@@ -187,7 +182,6 @@ export const PORTFOLIO = [
     alt: "Margaret automotores - Vehículos usados seleccionados en Sierras Chicas",
   },
   {
-    png: "/img/portfolio/vida-freelance.png",
     webp: "/img/portfolio/vida-freelance.webp",
     url: "https://vidafreelance.live",
     tituloKey: "portfolio3Titulo" as const,
@@ -195,7 +189,6 @@ export const PORTFOLIO = [
     alt: "Vida Freelance",
   },
   {
-    png: "/img/portfolio/simonetta.png",
     webp: "/img/portfolio/simonetta.webp",
     url: "https://rsai.com.ar/",
     tituloKey: "portfolio4Titulo" as const,
@@ -203,7 +196,6 @@ export const PORTFOLIO = [
     alt: "Simonetta",
   },
   {
-    png: "/img/portfolio/hola-mundo-store.png",
     webp: "/img/portfolio/hola-mundo-store.webp",
     url: "https://holamundo.store/",
     tituloKey: "portfolio5Titulo" as const,
@@ -211,7 +203,6 @@ export const PORTFOLIO = [
     alt: "Hola Mundo - tienda online de merchandising para developers",
   },
   {
-    png: "/img/portfolio/proyecto-patitas.png",
     webp: "/img/portfolio/proyecto-patitas.webp",
     url: "https://proyectopatitas.lemora.lat/",
     tituloKey: "portfolio6Titulo" as const,
@@ -219,7 +210,6 @@ export const PORTFOLIO = [
     alt: "Proyecto Patitas",
   },
   {
-    png: "/img/portfolio/coti-estevan.png",
     webp: "/img/portfolio/coti-estevan.webp",
     url: "https://constanzaestevan.com/",
     tituloKey: "portfolio7Titulo" as const,
@@ -227,7 +217,6 @@ export const PORTFOLIO = [
     alt: "Constanza Estevan",
   },
   {
-    png: "/img/portfolio/aural.png",
     webp: "/img/portfolio/aural.webp",
     url: "https://aural-sounds.com/",
     tituloKey: "portfolio8Titulo" as const,
@@ -235,7 +224,6 @@ export const PORTFOLIO = [
     alt: "Aural Sounds",
   },
   {
-    png: "/img/portfolio/qunan.png",
     webp: "/img/portfolio/qunan.webp",
     url: "https://qunanarquitectos.com/",
     tituloKey: "portfolio9Titulo" as const,
@@ -243,7 +231,6 @@ export const PORTFOLIO = [
     alt: "Qunan Arquitectos",
   },
   {
-    png: "/img/portfolio/eden.png",
     webp: "/img/portfolio/eden.webp",
     url: "https://www.edenagua.com/",
     tituloKey: "portfolio10Titulo" as const,
@@ -251,7 +238,6 @@ export const PORTFOLIO = [
     alt: "Eden Agua",
   },
   {
-    png: "/img/portfolio/kalcker-institute.png",
     webp: "/img/portfolio/kalcker-institute.webp",
     url: "https://es.kalckerinstitute.com/",
     tituloKey: "portfolio11Titulo" as const,
@@ -259,7 +245,6 @@ export const PORTFOLIO = [
     alt: "Kalcker Institute",
   },
   {
-    png: "/img/portfolio/voedia.png",
     webp: "/img/portfolio/voedia.webp",
     url: "https://voedia.es/",
     tituloKey: "portfolio12Titulo" as const,
@@ -267,7 +252,6 @@ export const PORTFOLIO = [
     alt: "Voedia",
   },
   {
-    png: "/img/portfolio/maquinarias-pesadas.png",
     webp: "/img/portfolio/maquinarias-pesadas.webp",
     url: "https://maquinarias.pe/",
     tituloKey: "portfolio13Titulo" as const,
@@ -275,7 +259,6 @@ export const PORTFOLIO = [
     alt: "Maquinarias | Autos, Equipos, Repuestos y Servicio Técnico",
   },
   {
-    png: "/img/portfolio/marcelo-jaime.png",
     webp: "/img/portfolio/marcelo-jaime.webp",
     url: "https://marcelojaime.com/",
     tituloKey: "portfolio14Titulo" as const,
@@ -283,7 +266,6 @@ export const PORTFOLIO = [
     alt: "Marcelo Jaime",
   },
   {
-    png: "/img/portfolio/cm-powertech.png",
     webp: "/img/portfolio/cm-powertech.webp",
     url: "https://www.cmpowertech.com/es/",
     tituloKey: "portfolio15Titulo" as const,
@@ -291,7 +273,6 @@ export const PORTFOLIO = [
     alt: "CMPowerTech",
   },
   {
-    png: "/img/portfolio/redes-peru.png",
     webp: "/img/portfolio/redes-peru.webp",
     url: "https://redes.pe/",
     tituloKey: "portfolio16Titulo" as const,
@@ -299,7 +280,6 @@ export const PORTFOLIO = [
     alt: "Redes - Sostenibilidad pesquera",
   },
   {
-    png: "/img/portfolio/livet-perfumes.png",
     webp: "/img/portfolio/livet-perfumes.webp",
     url: "https://livetperfumes.com.ar/",
     tituloKey: "portfolio17Titulo" as const,
@@ -307,7 +287,6 @@ export const PORTFOLIO = [
     alt: "Livet Perfumes",
   },
   {
-    png: "/img/portfolio/clinica-del-carmen.png",
     webp: "/img/portfolio/clinica-del-carmen.webp",
     url: "https://clinicadelcarmen.com.ar/",
     tituloKey: "portfolio18Titulo" as const,
@@ -315,7 +294,6 @@ export const PORTFOLIO = [
     alt: "Clínica Privada del Carmen",
   },
   {
-    png: "/img/portfolio/alac-ohh.png",
     webp: "/img/portfolio/alac-ohh.webp",
     url: "https://alacoohperu.pe/",
     tituloKey: "portfolio19Titulo" as const,
@@ -323,7 +301,6 @@ export const PORTFOLIO = [
     alt: "Alac Ohh",
   },
   {
-    png: "/img/portfolio/code-injection.png",
     webp: "/img/portfolio/code-injection.webp",
     url: "https://www.codeinjection.site/",
     tituloKey: "portfolio20Titulo" as const,

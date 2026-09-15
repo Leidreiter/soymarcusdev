@@ -132,12 +132,6 @@
     margin: 0;
     transition: opacity 0.35s ease, transform 0.35s ease;
 
-    &.oculta {
-      opacity: 0;
-      transform: translateY(3rem);
-      pointer-events: none;
-    }
-
     @include m.tablet {
       position: relative;
       top: auto;
@@ -181,20 +175,6 @@
       max-width: none;
       display: block;
       overflow: hidden;
-    }
-  }
-
-  .hero-podcast {
-    display: none;
-    @include m.tablet {
-      display: block;
-      width: 80%;
-      max-width: 28rem;
-      height: auto;
-      object-fit: contain;
-      border-radius: 1.6rem;
-      margin-top: 1rem;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
   }
 

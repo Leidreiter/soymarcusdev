@@ -1,19 +1,7 @@
 @use 'variables' as v;
 
-@mixin tel {
-    @media (min-width: v.$tel) {
-        @content;
-    }
-}
-
 @mixin tablet {
     @media (min-width: v.$tablet) {
-        @content;
-    }
-}
-
-@mixin desk {
-    @media (min-width: v.$desk) {
         @content;
     }
 }
@@ -22,12 +10,6 @@
     @media (min-width: v.$xl) {
         @content;
     }
-}
-
-@mixin contenedor {
-    width: 95%;
-    max-width: 120rem;
-    margin: 0 auto;
 }
 
 @mixin grid($columnas, $gap) {
@@ -67,12 +49,4 @@
     }
 }
 
-@mixin reset-lista {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
 
-@mixin background($imagen){
-    background: $imagen;
-}
