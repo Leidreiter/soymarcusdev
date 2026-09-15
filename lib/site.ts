@@ -307,6 +307,20 @@ export const PORTFOLIO = [
     descKey: "portfolio20Desc" as const,
     alt: "Code Injection",
   },
+  {
+    webp: "/img/portfolio/lemora.webp",
+    url: "https://www.lemora.lat/",
+    tituloKey: "portfolio21Titulo" as const,
+    descKey: "portfolio21Desc" as const,
+    alt: "Lemora",
+  },
+  {
+    webp: "/img/portfolio/rifa-australia.webp",
+    url: "https://rifa.soymarcus.dev/",
+    tituloKey: "portfolio22Titulo" as const,
+    descKey: "portfolio22Desc" as const,
+    alt: "Rifa Australia",
+  },
 ];
 
 export const DIAGNOSTICO = [

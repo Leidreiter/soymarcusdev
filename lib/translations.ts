@@ -180,6 +180,12 @@ export const translations = {
     portfolio20Titulo: "Code Injection",
     portfolio20Desc:
       "Web de emprendimiento tecnológico con estética moderna y contenido claro.",
+    portfolio21Titulo: "Lemora",
+    portfolio21Desc:
+      "Startup de ecommerce: tiendas online autoadministrables para emprendedores y vendedores.",
+    portfolio22Titulo: "Rifa Australia",
+    portfolio22Desc:
+      "Web de rifa online con venta de números, pago integrado y publicación de sorteos.",
 
     // Problemas / Soluciones
     problemasTitulo: "Tu problema",
@@ -435,6 +441,12 @@ export const translations = {
     portfolio20Titulo: "Code Injection",
     portfolio20Desc:
       "Tech venture website with modern aesthetics and clear content.",
+    portfolio21Titulo: "Lemora",
+    portfolio21Desc:
+      "Ecommerce startup: self-managed online stores for entrepreneurs and sellers.",
+    portfolio22Titulo: "Rifa Australia",
+    portfolio22Desc:
+      "Online raffle website with number sales, integrated payment and draw publishing.",
 
     // Problemas / Soluciones
     problemasTitulo: "Your problem",
