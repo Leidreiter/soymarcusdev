@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { CONTENIDO_EMAIL } from "@/lib/site";
 import SiteGlowCursor from "@/components/reactbits/GlowCursor/SiteGlowCursor";
 
@@ -330,7 +331,9 @@ export default function LinksClient() {
       <main className="container">
         <section className="hero animate-in" aria-label="Perfil">
           <div className="profile-photo">
+            <Link href="/">
             <img src="/img/perfil.svg" alt="perfil @soymarcusdev" className="profile-img" />
+          </Link>
             <span className="pulseOnline" aria-label="En línea"></span>
           </div>
           <h1 className="profile-name">@soymarcusdev</h1>
