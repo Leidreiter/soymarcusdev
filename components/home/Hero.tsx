@@ -154,13 +154,13 @@ export default function Hero() {
               <img
                 className={styles["reveal-base"]}
                 loading="lazy"
-                src="/img/Leidreiter_Martin.png"
+                src="/img/Soy_Marcus_Dev.png"
                 alt="Martin Leidreiter - Fotografía de estudio"
                 fetchPriority="high"
               />
               <img
                 className={styles["reveal-target"]}
-                src="/img/Soy_Marcus_Dev.png"
+                src="/img/Leidreiter_Martin.png"
                 alt=""
                 loading="lazy"
               />
