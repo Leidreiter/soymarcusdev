@@ -6,39 +6,39 @@ import { useEffect } from "react";
 
 const etapas = [
   {
-    semana: "Semana 1",
+    semana: "Semana 01",
     titulo: "Planificación y configuración técnica",
-    presupuesto: "USD 90",
+    precio: "USD 90",
     items: [
       "Reunión inicial y levantamiento de requerimientos",
       "Configuración del entorno WordPress",
-      "Estructura base del sitio y preparación técnica",
+      "Estructura base y preparación técnica",
     ],
   },
   {
-    semana: "Semana 2",
+    semana: "Semana 02",
     titulo: "Diseño y desarrollo web",
-    presupuesto: "USD 265",
+    precio: "USD 265",
     items: [
-      "Diseño de páginas principales",
-      "Desarrollo responsive",
-      "Estructura institucional y catálogo",
+      "Diseño e implementación de páginas principales",
+      "Adaptación responsive",
+      "Catálogo e identidad aplicada al sitio",
     ],
   },
   {
-    semana: "Semana 3",
+    semana: "Semana 03",
     titulo: "Implementación del LMS",
-    presupuesto: "USD 220",
+    precio: "USD 220",
     items: [
       "Configuración de LearnDash LMS",
-      "Estructura de cursos, módulos y lecciones",
-      "Permisos y avance de alumnos",
+      "Cursos, módulos, lecciones y permisos",
+      "Avance y seguimiento de alumnos",
     ],
   },
   {
-    semana: "Semana 4",
+    semana: "Semana 04",
     titulo: "Ventas, pagos y membresías",
-    presupuesto: "USD 175",
+    precio: "USD 175",
     items: [
       "Configuración de WooCommerce",
       "WooCommerce Memberships y reglas de acceso",
@@ -46,22 +46,22 @@ const etapas = [
     ],
   },
   {
-    semana: "Semana 5",
+    semana: "Semana 05",
     titulo: "Alumnos, certificados y automatizaciones",
-    presupuesto: "USD 130",
+    precio: "USD 130",
     items: [
       "Gestión de cuentas de alumnos",
       "Certificados",
-      "Preparación para clases en vivo y notificaciones básicas",
+      "Preparación para clases en vivo",
     ],
   },
   {
-    semana: "Semana 6",
+    semana: "Semana 06",
     titulo: "Pruebas, lanzamiento y capacitación",
-    presupuesto: "USD 220",
+    precio: "USD 220",
     items: [
       "Pruebas funcionales y correcciones",
-      "Publicación del sitio",
+      "Publicación de la plataforma",
       "Capacitación para administración",
     ],
   },
@@ -69,20 +69,19 @@ const etapas = [
 
 const incluidos = [
   "Instalación y configuración de WordPress",
-  "Diseño e implementación de páginas principales",
-  "Adaptación responsive",
-  "Configuración de LearnDash LMS, WooCommerce y WooCommerce Memberships",
+  "Páginas principales y adaptación responsive",
+  "LearnDash LMS, WooCommerce y WooCommerce Memberships",
   "Sistema de venta de cursos",
-  "Gestión de alumnos y certificados",
-  "Pruebas funcionales, publicación y capacitación",
+  "Gestión de alumnos, accesos y certificados",
+  "Pruebas, publicación y capacitación",
 ];
 
 const noIncluidos = [
   "Diseño de identidad visual desde cero",
   "Producción, grabación o edición de cursos",
-  "Carga masiva de todo el contenido",
+  "Carga masiva de contenido",
   "Desarrollo de plugins personalizados",
-  "Comunidad privada avanzada o automatizaciones complejas",
+  "Comunidad privada avanzada",
   "Licencias, extensiones premium o costos externos",
 ];
 
@@ -113,50 +112,54 @@ export default function ZiplerDigitalClient() {
   return (
     <main className="zd-main">
       <header className="zd-hero">
-        <div className="zd-hero-header">
-          <div className="zd-logo-row">
-            <div className="zd-logo-group">
-              <Image
-                src="/images/ziplertag1.png"
-                alt="Logo Zipler Digital"
-                width={280}
-                height={90}
-                className="zd-logo"
-                priority
-              />
-              <div className="zd-divider" />
-              <div className="zd-brand">
-                <span className="zd-brand-label">Propuesta</span>
-                <span className="zd-brand-name">@soymarcusdev</span>
-              </div>
-            </div>
-            <span className="zd-badge">Plataforma Educativa Online</span>
+        <div className="zd-hero-top">
+          <div className="zd-logos">
+            <Image
+              src="/images/ziplertag1.png"
+              alt="Logo Zipler Digital"
+              width={320}
+              height={100}
+              className="zd-logo-client"
+              priority
+            />
+            <div className="zd-logo-divider" />
+            <Image
+              src="/images/logomarcasvg.svg"
+              alt="@soymarcusdev"
+              width={180}
+              height={40}
+            />
           </div>
-          <div className="zd-hero-title-group">
-            <span className="zd-kicker">WordPress · LearnDash · WooCommerce</span>
-            <h1 className="zd-hero-title">Zipler Digital</h1>
-            <p className="zd-hero-subtitle">
-              Propuesta para el desarrollo de una escuela online con catálogo de cursos,
-              sistema de ventas, membresías, gestión de alumnos y preparación para clases en vivo.
-            </p>
+          <div className="zd-hero-meta">
+            <span className="zd-meta-pill">Propuesta confidencial</span>
+            <span className="zd-meta-pill">WordPress + LearnDash + WooCommerce</span>
           </div>
         </div>
-        <div className="zd-hero-grid">
-          <article className="zd-hero-card">
-            <span className="zd-hero-card-label">Presupuesto</span>
-            <span className="zd-hero-card-value">USD 1.100</span>
+        <div className="zd-hero-content">
+          <span className="zd-hero-kicker">Escuela online · Plataforma educativa</span>
+          <h1 className="zd-hero-title">Zipler Digital</h1>
+          <p className="zd-hero-subtitle">
+            Desarrollo de una plataforma educativa con catálogo de cursos, sistema de
+            ventas, membresías, gestión de alumnos, certificados y estructura preparada
+            para clases en vivo.
+          </p>
+        </div>
+        <div className="zd-hero-stats">
+          <article className="zd-stat">
+            <span className="zd-stat-label">Presupuesto</span>
+            <span className="zd-stat-value">USD 1.100</span>
           </article>
-          <article className="zd-hero-card">
-            <span className="zd-hero-card-label">Plazo</span>
-            <span className="zd-hero-card-value">6 Semanas</span>
+          <article className="zd-stat">
+            <span className="zd-stat-label">Plazo estimado</span>
+            <span className="zd-stat-value">6 semanas</span>
           </article>
-          <article className="zd-hero-card">
-            <span className="zd-hero-card-label">Plataforma</span>
-            <span className="zd-hero-card-value">WordPress LMS</span>
+          <article className="zd-stat">
+            <span className="zd-stat-label">Pagos</span>
+            <span className="zd-stat-value">4 hitos</span>
           </article>
-          <article className="zd-hero-card">
-            <span className="zd-hero-card-label">Pagos</span>
-            <span className="zd-hero-card-value">4 Hitos</span>
+          <article className="zd-stat">
+            <span className="zd-stat-label">Infraestructura</span>
+            <span className="zd-stat-value">Dominio/Hosting existentes</span>
           </article>
         </div>
       </header>
@@ -166,30 +169,25 @@ export default function ZiplerDigitalClient() {
           <span className="zd-section-kicker">Cronograma</span>
           <h2 className="zd-section-title">Desarrollo por etapas</h2>
           <p className="zd-section-lead">
-            Cada semana está enfocada a un entregable concreto para mantener el proyecto
-            ordenado y predecible.
+            Avance estructurado semana a semana con entregables verificables.
           </p>
         </header>
-        <div className="zd-grid">
-          {etapas.map((etapa, index) => (
-            <article className="zd-card" key={etapa.semana}>
-              <header className="zd-card-header">
-                <div>
-                  <span className="zd-card-kicker">{etapa.semana}</span>
-                  <h3 className="zd-card-title">{etapa.titulo}</h3>
-                </div>
-                <span className="zd-card-index">0{index + 1}</span>
-              </header>
-              <ul className="zd-list">
-                {etapa.items.map((item) => (
-                  <li className="zd-list-item" key={item}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="zd-hero-card" style={{ marginTop: "auto" }}>
-                <span className="zd-hero-card-label">Presupuesto</span>
-                <span className="zd-hero-card-value">{etapa.presupuesto}</span>
+        <div className="zd-timeline">
+          {etapas.map((etapa) => (
+            <article className="zd-timeline-item" key={etapa.semana}>
+              <div className="zd-timeline-meta">
+                <span className="zd-timeline-week">{etapa.semana}</span>
+                <span className="zd-timeline-price">{etapa.precio}</span>
+              </div>
+              <div className="zd-timeline-content">
+                <h3 className="zd-timeline-title">{etapa.titulo}</h3>
+                <ul className="zd-list">
+                  {etapa.items.map((item) => (
+                    <li className="zd-list-item" key={item}>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </article>
           ))}
@@ -199,35 +197,31 @@ export default function ZiplerDigitalClient() {
       <section className="zd-section">
         <header className="zd-section-header">
           <span className="zd-section-kicker">Alcance</span>
-          <h2 className="zd-section-title">Incluido vs No incluido</h2>
+          <h2 className="zd-section-title">Incluido y no incluido</h2>
         </header>
-        <div className="zd-split">
+        <div className="zd-grid-two">
           <article className="zd-card">
             <header className="zd-card-header">
-              <div>
-                <span className="zd-card-kicker">Incluido</span>
-                <h3 className="zd-card-title">En el presupuesto</h3>
-              </div>
+              <span className="zd-card-kicker">Incluido</span>
+              <h3 className="zd-card-title">Dentro del presupuesto</h3>
             </header>
             <ul className="zd-list">
               {incluidos.map((item) => (
                 <li className="zd-list-item" key={item}>
-                  {item}
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
           </article>
           <article className="zd-card">
             <header className="zd-card-header">
-              <div>
-                <span className="zd-card-kicker">No incluido</span>
-                <h3 className="zd-card-title">Fuera del alcance</h3>
-              </div>
+              <span className="zd-card-kicker">No incluido</span>
+              <h3 className="zd-card-title">Fuera del alcance</h3>
             </header>
             <ul className="zd-list">
               {noIncluidos.map((item) => (
                 <li className="zd-list-item" key={item}>
-                  {item}
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -272,8 +266,8 @@ export default function ZiplerDigitalClient() {
           <span className="zd-section-kicker">Licencias</span>
           <h2 className="zd-section-title">Costos externos</h2>
           <p className="zd-section-lead">
-            Los USD 1.100 corresponden únicamente al desarrollo. Las licencias comerciales
-            se abonan por separado según las necesidades del proyecto.
+            Las licencias comerciales, renovaciones y comisiones quedan a cargo del
+            cliente. Se recomienda confirmar precios vigentes al momento de contratación.
           </p>
         </header>
         <div className="zd-table-wrap">
@@ -299,26 +293,29 @@ export default function ZiplerDigitalClient() {
       </section>
 
       <section className="zd-callout">
-        <header className="zd-section-header">
-          <span className="zd-section-kicker">Resultado Esperado</span>
-          <h2 className="zd-section-title">Plataforma lista para lanzar</h2>
-          <p className="zd-section-lead">
-            Al finalizar las 6 semanas, Zipler Digital contará con una escuela online
-            funcional, escalable y lista para vender sus formaciones.
-          </p>
-        </header>
-        <div className="zd-callout-grid">
-          <article className="zd-callout-card">
-            <span className="zd-hero-card-label">Presupuesto Final</span>
-            <span className="zd-hero-card-value">USD 1.100</span>
+        <div className="zd-callout-main">
+          <header className="zd-section-header">
+            <span className="zd-section-kicker">Resultado esperado</span>
+            <h2 className="zd-section-title">Plataforma lista para lanzar</h2>
+            <p className="zd-section-lead">
+              Al finalizar las 6 semanas, Zipler Digital dispondrá de una escuela online
+              profesional, adaptable a dispositivos móviles, con sistema comercial,
+              membresías y estructura ampliable para futuras especializaciones.
+            </p>
+          </header>
+        </div>
+        <div className="zd-callout-stats">
+          <article className="zd-callout-stat">
+            <span className="zd-stat-label">Presupuesto final</span>
+            <span className="zd-stat-value">USD 1.100</span>
           </article>
-          <article className="zd-callout-card">
-            <span className="zd-hero-card-label">Plazo Estimado</span>
-            <span className="zd-hero-card-value">6 Semanas</span>
+          <article className="zd-callout-stat">
+            <span className="zd-stat-label">Plazo estimado</span>
+            <span className="zd-stat-value">6 semanas</span>
           </article>
-          <article className="zd-callout-card">
-            <span className="zd-hero-card-label">Tecnología</span>
-            <span className="zd-hero-card-value">WP + LearnDash</span>
+          <article className="zd-callout-stat">
+            <span className="zd-stat-label">Stack</span>
+            <span className="zd-stat-value">WordPress · LearnDash</span>
           </article>
         </div>
       </section>
@@ -333,3 +330,5 @@ export default function ZiplerDigitalClient() {
     </main>
   );
 }
+EOF
+echo "done"
